@@ -12,7 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Miki\Documents\WANCHAQ\SISTEMA DE CONTROL  VALORES\SETUP-CRUD RDS 0.0\</PublishUrl>
+    <PublishUrl>C:\Users\Miki\Documents\WANCHAQ\SISTEMA DE CONTROL  VALORES\INSTALADORES\SETUP07062019-paracoac 32x\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>CONTROL DE DEUDA.ico</ApplicationIcon>
+    <ApplicationIcon>cobranza coac ori.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>57960646312142859CFE07AC867C3EF7EA6E0080</ManifestCertificateThumbprint>
@@ -60,12 +60,41 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,11 +106,120 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmReporteRD_Masiv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmReporteRD_Masiv.Designer.cs">
+      <DependentUpon>frmReporteRD_Masiv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportEstadoCuentaMasivo - Copia-NOTIFICACION PRE COAC 2019.cs">
+      <DependentUpon>ReportEstadoCuentaMasivo - Copia-NOTIFICACION PRE COAC 2019.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ReportRD_Masiv.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportRD_Masiv.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportResolucionMasiva.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportResolucionMasiva.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DS_COAC_RESINI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_COAC_RESINI.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_VALORES.cs">
+      <DependentUpon>DS_VALORES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_VALORES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_VALORES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmControlDeuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmControlDeuda.Designer.cs">
+      <DependentUpon>frmControlDeuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuxiliar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuxiliar.Designer.cs">
+      <DependentUpon>frmAuxiliar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmisionMasiva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmisionMasiva.Designer.cs">
+      <DependentUpon>frmEmisionMasiva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstadoActualDeuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstadoActualDeuda.Designer.cs">
+      <DependentUpon>frmEstadoActualDeuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenerarEstadosCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenerarEstadosCuenta.Designer.cs">
+      <DependentUpon>frmGenerarEstadosCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportCrisResolucionIniciocs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportCrisResolucionIniciocs.Designer.cs">
+      <DependentUpon>FrmReportCrisResolucionIniciocs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportCrisResolucionInicioOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportCrisResolucionInicioOP.Designer.cs">
+      <DependentUpon>FrmReportCrisResolucionInicioOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportCristalEstadoMasivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportCristalEstadoMasivo.Designer.cs">
+      <DependentUpon>frmReportCristalEstadoMasivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportCrysResolucionRentencion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportCrysResolucionRentencion.Designer.cs">
+      <DependentUpon>FrmReportCrysResolucionRentencion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteCoacResolucionInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteCoacResolucionInicio.Designer.cs">
+      <DependentUpon>frmReporteCoacResolucionInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCoactivaControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCoactivaControl.Designer.cs">
+      <DependentUpon>frmCoactivaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenerarRDByCodigo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenerarRDByCodigo.Designer.cs">
+      <DependentUpon>frmGenerarRDByCodigo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNotificador.cs">
       <SubType>Form</SubType>
@@ -89,19 +227,168 @@
     <Compile Include="frmNotificador.Designer.cs">
       <DependentUpon>frmNotificador.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReporteOrdenPagoP1P2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteOrdenPagoP1P2.Designer.cs">
+      <DependentUpon>frmReporteOrdenPagoP1P2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteOrdenPagoP1P2P3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteOrdenPagoP1P2P3.Designer.cs">
+      <DependentUpon>frmReporteOrdenPagoP1P2P3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteOrdenPagoP2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteOrdenPagoP2.Designer.cs">
+      <DependentUpon>frmReporteOrdenPagoP2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteOrdenPagoP2P3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteOrdenPagoP2P3.Designer.cs">
+      <DependentUpon>frmReporteOrdenPagoP2P3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteOrdenPagoP3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteOrdenPagoP3.Designer.cs">
+      <DependentUpon>frmReporteOrdenPagoP3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteResolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteResolucion.Designer.cs">
+      <DependentUpon>frmReporteResolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmResporteResolucionMasiva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResporteResolucionMasiva.Designer.cs">
+      <DependentUpon>frmResporteResolucionMasiva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintReport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportEstadoCuentaMasivo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportEstadoCuentaMasivo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportResolucionDeInicio - OP.cs">
+      <DependentUpon>ReportResolucionDeInicio - OP.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ReportResolucionDeInicio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportResolucionDeInicio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportResolucionRetencion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportResolucionRetencion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Valores.cs">
+      <DependentUpon>Valores.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Valores.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Valores.dbml</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmReporteRD_Masiv.resx">
+      <DependentUpon>frmReporteRD_Masiv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportEstadoCuentaMasivo - Copia-NOTIFICACION PRE COAC 2019.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportEstadoCuentaMasivo - Copia-NOTIFICACION PRE COAC 2019.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportRD_Masiv.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportRD_Masiv.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportResolucionMasiva.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportResolucionMasiva.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormatoResolucionDeterminacion.rdlc" />
+    <EmbeddedResource Include="frmControlDeuda.resx">
+      <DependentUpon>frmControlDeuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuxiliar.resx">
+      <DependentUpon>frmAuxiliar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmisionMasiva.resx">
+      <DependentUpon>frmEmisionMasiva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstadoActualDeuda.resx">
+      <DependentUpon>frmEstadoActualDeuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenerarEstadosCuenta.resx">
+      <DependentUpon>frmGenerarEstadosCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportCrisResolucionIniciocs.resx">
+      <DependentUpon>FrmReportCrisResolucionIniciocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportCrisResolucionInicioOP.resx">
+      <DependentUpon>FrmReportCrisResolucionInicioOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportCristalEstadoMasivo.resx">
+      <DependentUpon>frmReportCristalEstadoMasivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportCrysResolucionRentencion.resx">
+      <DependentUpon>FrmReportCrysResolucionRentencion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteCoacResolucionInicio.resx">
+      <DependentUpon>frmReporteCoacResolucionInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCoactivaControl.resx">
+      <DependentUpon>frmCoactivaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenerarRDByCodigo.resx">
+      <DependentUpon>frmGenerarRDByCodigo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNotificador.resx">
       <DependentUpon>frmNotificador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteOrdenPagoP1P2.resx">
+      <DependentUpon>frmReporteOrdenPagoP1P2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteOrdenPagoP1P2P3.resx">
+      <DependentUpon>frmReporteOrdenPagoP1P2P3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteOrdenPagoP2.resx">
+      <DependentUpon>frmReporteOrdenPagoP2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteOrdenPagoP2P3.resx">
+      <DependentUpon>frmReporteOrdenPagoP2P3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteOrdenPagoP3.resx">
+      <DependentUpon>frmReporteOrdenPagoP3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteResolucion.resx">
+      <DependentUpon>frmReporteResolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmResporteResolucionMasiva.resx">
+      <DependentUpon>frmResporteResolucionMasiva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORDENPAGOP3.rdlc" />
+    <EmbeddedResource Include="ORDENPAGOP2P3.rdlc" />
+    <EmbeddedResource Include="ORDENPAGOP1P2P3.rdlc" />
+    <EmbeddedResource Include="ORDENPAGOP1P2.rdlc" />
+    <EmbeddedResource Include="ORDENPAGOP2.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -111,6 +398,48 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReporteCoacInicio.rdlc" />
+    <EmbeddedResource Include="ReportEstadoCuentaMasivo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportEstadoCuentaMasivo1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportEstadoCuentaMasivo.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportResumenRDCoactiva.rdlc" />
+    <EmbeddedResource Include="ReportResolucionDeInicio - OP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportResolucionDeInicio - OP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportResolucionDeInicio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportResolucionDeInicio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportResolucionRetencion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportResolucionRetencion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DS_COAC_RESINI.xsc">
+      <DependentUpon>DS_COAC_RESINI.xsd</DependentUpon>
+    </None>
+    <None Include="DS_COAC_RESINI.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_COAC_RESINI.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_COAC_RESINI.xss">
+      <DependentUpon>DS_COAC_RESINI.xsd</DependentUpon>
+    </None>
+    <None Include="DS_VALORES.xsc">
+      <DependentUpon>DS_VALORES.xsd</DependentUpon>
+    </None>
+    <None Include="DS_VALORES.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_VALORES.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_VALORES.xss">
+      <DependentUpon>DS_VALORES.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,20 +460,37 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cobranza coac ori.ico" />
     <Content Include="CONTROL DE DEUDA.ico" />
-    <Content Include="Iconos\CONTROL DE DEUDA.ico" />
+    <Content Include="CONTROL DE DEUDA2.ico" />
     <Content Include="Iconos\notis_xnF_icon.ico" />
     <Content Include="Imagenes\011_yes-2-256.png" />
     <Content Include="Imagenes\012_restart-512.png" />
     <Content Include="Imagenes\01_arrow_left-256.png" />
     <Content Include="Imagenes\DELETE.png" />
     <Content Include="Imagenes\SALIR.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -157,6 +503,178 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="CrystalDecisions.CrystalReports.Engine">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ClientDoc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommLayer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonControls">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Controllers">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CubeDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataSetConversion">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ObjectFactory">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Prompting">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ReportDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.XmlSerialize">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportSource">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.Shared">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.Windows.Forms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

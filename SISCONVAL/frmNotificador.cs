@@ -17,6 +17,15 @@ namespace SISCONVAL
         {
             InitializeComponent();
             dgvNotificadores.DataSource = from N in BD.NOTIFICADOR select N;
+
+            dgvNotificadores.MultiSelect = true;
+            dgvNotificadores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvNotificadores.ReadOnly = true;
+            dgvNotificadores.AllowUserToAddRows = false;
+            dgvNotificadores.BackgroundColor = Color.White;
+            dgvNotificadores.RowHeadersVisible = false;
+            dgvNotificadores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void btnIngresarNotificador_Click(object sender, EventArgs e)
@@ -77,6 +86,12 @@ namespace SISCONVAL
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvNotificadores_SelectionChanged(object sender, EventArgs e)
+        {
+            txtNombreCorto.Text = dgvNotificadores.Rows[dgvNotificadores.CurrentRow.Index].Cells["FANOMCORT"].Value.ToString();
+            txtNombreNotificador.Text = dgvNotificadores.Rows[dgvNotificadores.CurrentRow.Index].Cells["FANOMNOTR"].Value.ToString();
         }
     }
 }

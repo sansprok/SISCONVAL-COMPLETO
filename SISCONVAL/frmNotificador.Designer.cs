@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNotificador));
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvNotificadores = new System.Windows.Forms.DataGridView();
-            this.txtEliminarNotificador = new System.Windows.Forms.Button();
-            this.txtModificarNotificador = new System.Windows.Forms.Button();
+            this.btnEliminarNotificador = new System.Windows.Forms.Button();
+            this.btnModificarNotificador = new System.Windows.Forms.Button();
             this.btnIngresarNotificador = new System.Windows.Forms.Button();
             this.txtNombreNotificador = new System.Windows.Forms.TextBox();
             this.txtNombreCorto = new System.Windows.Forms.TextBox();
@@ -56,40 +56,43 @@
             // 
             // dgvNotificadores
             // 
-            this.dgvNotificadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNotificadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvNotificadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNotificadores.Location = new System.Drawing.Point(23, 102);
             this.dgvNotificadores.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvNotificadores.MultiSelect = false;
             this.dgvNotificadores.Name = "dgvNotificadores";
+            this.dgvNotificadores.ReadOnly = true;
             this.dgvNotificadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNotificadores.Size = new System.Drawing.Size(484, 358);
             this.dgvNotificadores.TabIndex = 16;
+            this.dgvNotificadores.SelectionChanged += new System.EventHandler(this.dgvNotificadores_SelectionChanged);
             // 
-            // txtEliminarNotificador
+            // btnEliminarNotificador
             // 
-            this.txtEliminarNotificador.Image = ((System.Drawing.Image)(resources.GetObject("txtEliminarNotificador.Image")));
-            this.txtEliminarNotificador.Location = new System.Drawing.Point(240, 480);
-            this.txtEliminarNotificador.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEliminarNotificador.Name = "txtEliminarNotificador";
-            this.txtEliminarNotificador.Size = new System.Drawing.Size(92, 85);
-            this.txtEliminarNotificador.TabIndex = 15;
-            this.txtEliminarNotificador.Text = "Eliminar";
-            this.txtEliminarNotificador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.txtEliminarNotificador.UseVisualStyleBackColor = true;
-            this.txtEliminarNotificador.Click += new System.EventHandler(this.txtEliminarNotificador_Click);
+            this.btnEliminarNotificador.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarNotificador.Image")));
+            this.btnEliminarNotificador.Location = new System.Drawing.Point(240, 480);
+            this.btnEliminarNotificador.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminarNotificador.Name = "btnEliminarNotificador";
+            this.btnEliminarNotificador.Size = new System.Drawing.Size(92, 85);
+            this.btnEliminarNotificador.TabIndex = 15;
+            this.btnEliminarNotificador.Text = "Eliminar";
+            this.btnEliminarNotificador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminarNotificador.UseVisualStyleBackColor = true;
+            this.btnEliminarNotificador.Click += new System.EventHandler(this.txtEliminarNotificador_Click);
             // 
-            // txtModificarNotificador
+            // btnModificarNotificador
             // 
-            this.txtModificarNotificador.Image = ((System.Drawing.Image)(resources.GetObject("txtModificarNotificador.Image")));
-            this.txtModificarNotificador.Location = new System.Drawing.Point(132, 480);
-            this.txtModificarNotificador.Margin = new System.Windows.Forms.Padding(4);
-            this.txtModificarNotificador.Name = "txtModificarNotificador";
-            this.txtModificarNotificador.Size = new System.Drawing.Size(85, 85);
-            this.txtModificarNotificador.TabIndex = 14;
-            this.txtModificarNotificador.Text = "Modificar";
-            this.txtModificarNotificador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.txtModificarNotificador.UseVisualStyleBackColor = true;
-            this.txtModificarNotificador.Click += new System.EventHandler(this.txtModificarNotificador_Click);
+            this.btnModificarNotificador.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarNotificador.Image")));
+            this.btnModificarNotificador.Location = new System.Drawing.Point(132, 480);
+            this.btnModificarNotificador.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificarNotificador.Name = "btnModificarNotificador";
+            this.btnModificarNotificador.Size = new System.Drawing.Size(85, 85);
+            this.btnModificarNotificador.TabIndex = 14;
+            this.btnModificarNotificador.Text = "Modificar";
+            this.btnModificarNotificador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnModificarNotificador.UseVisualStyleBackColor = true;
+            this.btnModificarNotificador.Click += new System.EventHandler(this.txtModificarNotificador_Click);
             // 
             // btnIngresarNotificador
             // 
@@ -144,11 +147,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(525, 581);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvNotificadores);
-            this.Controls.Add(this.txtEliminarNotificador);
-            this.Controls.Add(this.txtModificarNotificador);
+            this.Controls.Add(this.btnEliminarNotificador);
+            this.Controls.Add(this.btnModificarNotificador);
             this.Controls.Add(this.btnIngresarNotificador);
             this.Controls.Add(this.txtNombreNotificador);
             this.Controls.Add(this.txtNombreCorto);
@@ -169,8 +173,8 @@
 
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridView dgvNotificadores;
-        private System.Windows.Forms.Button txtEliminarNotificador;
-        private System.Windows.Forms.Button txtModificarNotificador;
+        private System.Windows.Forms.Button btnEliminarNotificador;
+        private System.Windows.Forms.Button btnModificarNotificador;
         private System.Windows.Forms.Button btnIngresarNotificador;
         private System.Windows.Forms.TextBox txtNombreNotificador;
         private System.Windows.Forms.TextBox txtNombreCorto;
