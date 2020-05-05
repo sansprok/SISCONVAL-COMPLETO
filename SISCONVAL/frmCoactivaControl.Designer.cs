@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCoactivaControl));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.PA_COAC_RESUMENRESOLUCIONESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DS_VALORES = new SISCONVAL.DS_VALORES();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -38,6 +38,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvExpedientesCoac = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblOtros = new System.Windows.Forms.Label();
             this.lblObservados = new System.Windows.Forms.Label();
             this.lblDevueltos = new System.Windows.Forms.Label();
@@ -125,12 +131,6 @@
             this.btnCargarReporte = new System.Windows.Forms.Button();
             this.cmbResporteCoacEstado = new System.Windows.Forms.ComboBox();
             this.PA_COAC_RESUMENRESOLUCIONESTableAdapter = new SISCONVAL.DS_VALORESTableAdapters.PA_COAC_RESUMENRESOLUCIONESTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PA_COAC_RESUMENRESOLUCIONESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_VALORES)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -242,6 +242,63 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1259, 153);
             this.panel3.TabIndex = 1;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Times New Roman", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(650, 105);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(87, 17);
+            this.label26.TabIndex = 43;
+            this.label26.Text = "Ningun Pago";
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.Red;
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox8.Location = new System.Drawing.Point(653, 126);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 15);
+            this.textBox8.TabIndex = 42;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Times New Roman", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(650, 55);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(84, 17);
+            this.label25.TabIndex = 41;
+            this.label25.Text = "Pago Parcial";
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.Orange;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Location = new System.Drawing.Point(653, 77);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 15);
+            this.textBox6.TabIndex = 40;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Times New Roman", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(650, 8);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(72, 17);
+            this.label24.TabIndex = 39;
+            this.label24.Text = "Pago Total";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Green;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(653, 28);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 15);
+            this.textBox1.TabIndex = 38;
             // 
             // lblOtros
             // 
@@ -767,7 +824,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(299, 156);
+            this.btnBuscar.Location = new System.Drawing.Point(298, 157);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(169, 35);
             this.btnBuscar.TabIndex = 18;
@@ -1158,9 +1215,9 @@
             // rpvCoacResoluciones
             // 
             this.rpvCoacResoluciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "DataSet_Resumen_ValoresCoac";
-            reportDataSource2.Value = this.PA_COAC_RESUMENRESOLUCIONESBindingSource;
-            this.rpvCoacResoluciones.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DataSet_Resumen_ValoresCoac";
+            reportDataSource1.Value = this.PA_COAC_RESUMENRESOLUCIONESBindingSource;
+            this.rpvCoacResoluciones.LocalReport.DataSources.Add(reportDataSource1);
             this.rpvCoacResoluciones.LocalReport.ReportEmbeddedResource = "SISCONVAL.Reportes.ReportResumenRDCoactiva.rdlc";
             this.rpvCoacResoluciones.Location = new System.Drawing.Point(0, 0);
             this.rpvCoacResoluciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1232,63 +1289,6 @@
             // PA_COAC_RESUMENRESOLUCIONESTableAdapter
             // 
             this.PA_COAC_RESUMENRESOLUCIONESTableAdapter.ClearBeforeFill = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Green;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(653, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 15);
-            this.textBox1.TabIndex = 38;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Times New Roman", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(650, 8);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(72, 17);
-            this.label24.TabIndex = 39;
-            this.label24.Text = "Pago Total";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Times New Roman", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(650, 55);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(84, 17);
-            this.label25.TabIndex = 41;
-            this.label25.Text = "Pago Parcial";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.Orange;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Location = new System.Drawing.Point(653, 77);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 15);
-            this.textBox6.TabIndex = 40;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Times New Roman", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(650, 105);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(87, 17);
-            this.label26.TabIndex = 43;
-            this.label26.Text = "Ningun Pago";
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.Color.Red;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Location = new System.Drawing.Point(653, 126);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 15);
-            this.textBox8.TabIndex = 42;
             // 
             // frmCoactivaControl
             // 
