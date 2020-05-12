@@ -1060,8 +1060,8 @@ namespace SISCONVAL
 
         private void BtnMasivo_Click(object sender, EventArgs e)
         {
-            /*frmReporteResolucion resolucionmasiv = new frmReporteResolucion(2019, 2560, 2570);
-            resolucionmasiv.ShowDialog();*/
+            frmReporteResolucion resolucionmasiv = new frmReporteResolucion(2019, 2560, 2570);
+            resolucionmasiv.ShowDialog();
             /*frmResporteResolucionMasiva resomasiv = new frmResporteResolucionMasiva(2019, 2560,2570);
             resomasiv.ShowDialog();*/
            /* frmReporteRD_Masiv report = new frmReporteRD_Masiv(2019,1,1714);

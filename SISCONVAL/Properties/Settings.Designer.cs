@@ -54,5 +54,16 @@ namespace SISCONVAL.Properties {
                 return ((string)(this["AUXWANCHAQConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=AUXWANCHAQ;Persist Security Info=True;User ID=sa;Pa" +
+            "ssword=Server2010")]
+        public string AUXWANCHAQConnectionString3 {
+            get {
+                return ((string)(this["AUXWANCHAQConnectionString3"]));
+            }
+        }
     }
 }
