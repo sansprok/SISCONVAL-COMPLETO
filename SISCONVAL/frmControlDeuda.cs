@@ -1060,17 +1060,44 @@ namespace SISCONVAL
 
         private void BtnMasivo_Click(object sender, EventArgs e)
         {
-            frmReporteResolucion resolucionmasiv = new frmReporteResolucion(2019, 2560, 2570);
+            frmReporteResolucion resolucionmasiv = new frmReporteResolucion(2019, 2560, 2560);
             resolucionmasiv.ShowDialog();
             /*frmResporteResolucionMasiva resomasiv = new frmResporteResolucionMasiva(2019, 2560,2570);
             resomasiv.ShowDialog();*/
-           /* frmReporteRD_Masiv report = new frmReporteRD_Masiv(2019,1,1714);
-            report.ShowDialog();*/
+            /*frmReporteRD_Masiv report = new frmReporteRD_Masiv(2019,1,1714);*/
+            /*report.ShowDialog();*/
         }
 
         private void txtAnioResolucion_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnBuscarByNro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // if (dgvValores.Rows.Count == 1)
+                {
+                    dgvValores.DataSource = from V in BD.VALORESGEN where V.FNNRORESOLUCION == int.Parse(txtNroResolucion.Text) && V.FAANIORESOLUCION == int.Parse(txtAnioResolucion.Text) select new { NroResolucion = V.FNNRORESOLUCION, IdCiudadano = V.FAIDCIUDADANO, Ciudadano = V.FAAPELLIDOSYNOMBRES, Estado = V.FAESTADOVALOR, Desde = V.FADESDE, Hasta = V.FAHASTA, Total = V.FNTOTALVALOR, Notificacion = V.FDFECHANOTIF, Vencimiento = V.FDFECHAVENCI, DiasTranscurridos = V.FNDIASTRANS, Observacion = V.FMOBSERVACION };
+
+                    txtCodigoContrib.Text = dgvValores.Rows[dgvValores.CurrentCell.RowIndex].Cells["IdCiudadano"].Value.ToString();
+                    cmbEstadoRD.Text = (from V in BD.ESTADORD where V.facodestadord == dgvValores.Rows[dgvValores.CurrentCell.RowIndex].Cells["Estado"].Value.ToString() select V.fadesestado).First().ToString();
+                    //cmbEstadoRD.Text = dgvValores.Rows[dgvValores.CurrentCell.RowIndex].Cells["Estado"].Value.ToString();
+                    //cmbEstadoRD.ValueMember = dgvValores.Rows[dgvValores.CurrentCell.RowIndex].Cells["Estado"].Value.ToString();
+                    var Resolucion = (from R in BD.VALORESGEN where R.FAIDCIUDADANO == txtCodigoContrib.Text && R.FAANIORESOLUCION == int.Parse(txtAnioResolucion.Text) select R).First();
+                    dtpFechaNotificacion.Value = Resolucion.FDFECHANOTIF.Value;
+                }
+
+            }
+            catch (Exception error)
+            {
+                if (txtNroResolucion.Text.Length > 0)
+                {
+                    MessageBox.Show("NUMERO DE RD NO EXISTE O ERROR DURANTE LA OPERACIÓN: txtNroResolucion_TextChanged, VUELVA A INTENTARLO. SI EL PROBLEMA CONTINUA COMUNÍQUESE CON EL ÁREA DE INFORMÁTICA. ");
+                }
+
+            }
         }
     }
 }

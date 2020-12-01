@@ -73,6 +73,7 @@
             this.txtObservacionRD = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarByNro = new System.Windows.Forms.Button();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.txtAnioResolucion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -590,6 +591,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.btnBuscarByNro);
             this.groupBox6.Controls.Add(this.btnGenerar);
             this.groupBox6.Controls.Add(this.txtAnioResolucion);
             this.groupBox6.Controls.Add(this.label1);
@@ -605,6 +607,16 @@
             this.groupBox6.TabIndex = 25;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "GENERAL";
+            // 
+            // btnBuscarByNro
+            // 
+            this.btnBuscarByNro.Location = new System.Drawing.Point(337, 73);
+            this.btnBuscarByNro.Name = "btnBuscarByNro";
+            this.btnBuscarByNro.Size = new System.Drawing.Size(129, 32);
+            this.btnBuscarByNro.TabIndex = 12;
+            this.btnBuscarByNro.Text = "Buscar";
+            this.btnBuscarByNro.UseVisualStyleBackColor = true;
+            this.btnBuscarByNro.Click += new System.EventHandler(this.btnBuscarByNro_Click);
             // 
             // btnGenerar
             // 
@@ -657,7 +669,7 @@
             this.txtNroResolucion.Location = new System.Drawing.Point(199, 73);
             this.txtNroResolucion.Margin = new System.Windows.Forms.Padding(4);
             this.txtNroResolucion.Name = "txtNroResolucion";
-            this.txtNroResolucion.Size = new System.Drawing.Size(267, 30);
+            this.txtNroResolucion.Size = new System.Drawing.Size(131, 30);
             this.txtNroResolucion.TabIndex = 3;
             this.txtNroResolucion.TextChanged += new System.EventHandler(this.txtNroResolucion_TextChanged);
             this.txtNroResolucion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNroResolucion_KeyDown);
@@ -2123,6 +2135,7 @@
         private System.Windows.Forms.Button btnImprimirOps;
         private System.Windows.Forms.Button btnMasivo;
         private System.Windows.Forms.CheckBox chkDeudaMAsiva;
+        private System.Windows.Forms.Button btnBuscarByNro;
     }
 }
 

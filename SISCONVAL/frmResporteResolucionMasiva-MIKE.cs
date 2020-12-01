@@ -11,22 +11,22 @@ using System.Windows.Forms;
 
 namespace SISCONVAL
 {
-    public partial class frmReporteRD_Masiv : Form
+    public partial class frmResporteResolucionMasiva : Form
     {
         int pFAANIORESOLUCION;
         int pFANRORESOLUCION_INI;
         int pFANRORESOLUCION_FIN;
-        //SqlConnection sqlcon = new SqlConnection(@"Data Source=USUARIO-4HQE76I\SSQLMDWPMSER06;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=wanchaqsql-2013");
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=.;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=Server2010");
-        public frmReporteRD_Masiv(int FAANIORESOLUCION, int FNNRORESOLUCION_INI, int FNNRORESOLUCION_FIN)
+        ///*CONEXION WANCHAQ*/  
+        SqlConnection sqlcon = new SqlConnection(@"Data Source=192.168.1.28\SQLMDW28;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=wanchaqsql-2013");
+        /*CONEXION LOCAL*///SqlConnection sqlcon = new SqlConnection(@"Data Source=.;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=Server2010");
+        public frmResporteResolucionMasiva(int FAANIORESOLUCION, int FNNRORESOLUCION_INI, int FNNRORESOLUCION_FIN)
         {
             InitializeComponent();
             pFAANIORESOLUCION = FAANIORESOLUCION;
             pFANRORESOLUCION_INI = FNNRORESOLUCION_INI;
             pFANRORESOLUCION_FIN = FNNRORESOLUCION_FIN;
         }
-
-        private void FrmReporteRD_Masiv_Load(object sender, EventArgs e)
+        private void FrmResporteResolucionMasiva_Load(object sender, EventArgs e)
         {
             if (sqlcon.State == ConnectionState.Closed)
                 sqlcon.Open();
@@ -34,14 +34,15 @@ namespace SISCONVAL
             sqlda.SelectCommand.CommandType = CommandType.StoredProcedure;
             sqlda.SelectCommand.Parameters.AddWithValue("@FAANIORESOLUCION", pFAANIORESOLUCION);
             sqlda.SelectCommand.Parameters.AddWithValue("@FNNRORESOLUCION_INI", pFANRORESOLUCION_INI);
-            sqlda.SelectCommand.Parameters.AddWithValue("@FNNRORESOLUCION_FIN", pFANRORESOLUCION_FIN);
+            sqlda.SelectCommand.Parameters.AddWithValue("@FNNRORESOLUCION_FIN", pFANRORESOLUCION_FIN);     
             DataTable dtbl = new DataTable();
             sqlda.Fill(dtbl);
             sqlcon.Close();
-            SISCONVAL.ReportRD_Masiv reportResolucionMasiv = new ReportRD_Masiv();
+            SISCONVAL.ReportResolucionMasiva reportResolucionMasiv = new ReportResolucionMasiva();
             reportResolucionMasiv.Database.Tables["PA_CONTROLDEUDA_DATOSVALOR_MASIV"].SetDataSource(dtbl);
-            crvREPORTE_RD_MASIV.ReportSource = null;
-            crvREPORTE_RD_MASIV.ReportSource = reportResolucionMasiv;
+            crvResolucionMasiva.ReportSource = null;
+            crvResolucionMasiva.ReportSource = reportResolucionMasiv;
         }
     }
 }
+
