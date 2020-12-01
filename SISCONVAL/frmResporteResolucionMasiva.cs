@@ -16,8 +16,8 @@ namespace SISCONVAL
         int pFAANIORESOLUCION;
         int pFANRORESOLUCION_INI;
         int pFANRORESOLUCION_FIN;
-        ///*CONEXION WANCHAQ*/  SqlConnection sqlcon = new SqlConnection(@"Data Source=192.168.1.6\SSQLMDWPMSER06;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=wanchaqsql-2013");
-        /*CONEXION LOCAL*/SqlConnection sqlcon = new SqlConnection(@"Data Source=.;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=Server2010");
+        /*CONEXION WANCHAQ*/  SqlConnection sqlcon = new SqlConnection(@"Data Source=192.168.1.28\sqlmdw28;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=wanchaqsql-2013");
+       // /*CONEXION LOCAL*/SqlConnection sqlcon = new SqlConnection(@"Data Source=.;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=Server2010");
         public frmResporteResolucionMasiva(int FAANIORESOLUCION, int FNNRORESOLUCION_INI, int FNNRORESOLUCION_FIN)
         {
             InitializeComponent();

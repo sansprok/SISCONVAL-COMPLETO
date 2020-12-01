@@ -18,8 +18,8 @@ namespace SISCONVAL
         string pFANROEXPEDIENTE;
         string pFATIPOVALOR;
         int pFAANIOEXPED;
-        //SqlConnection sqlcon = new SqlConnection(@"Data Source=192.168.1.6\SSQLMDWPMSER06;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=wanchaqsql-2013");
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=.;Initial Catalog=AUXWANCHAQ;Integrated Security=True");
+        SqlConnection sqlcon = new SqlConnection(@"Data Source=192.168.1.28\sqlmdw28;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=wanchaqsql-2013");
+        //SqlConnection sqlcon = new SqlConnection(@"Data Source=.;Initial Catalog=AUXWANCHAQ;Integrated Security=True");
 
 
         public FrmReportCrysResolucionRentencion(int FNNRORESOLUCION, string FAIDCIUDADANO, string FANROEXPEDIENTE, string FATIPOVALOR, int FAANIOEXPED)

@@ -555,7 +555,7 @@
             // 
             this.cmbExpedienteEjecutorCoac.FormattingEnabled = true;
             this.cmbExpedienteEjecutorCoac.Items.AddRange(new object[] {
-            "ABOG. CARLOS QUISPICHU MONTESINOS"});
+            "ABOG. FABIOLA VILLALBA SALCEDO"});
             this.cmbExpedienteEjecutorCoac.Location = new System.Drawing.Point(129, 167);
             this.cmbExpedienteEjecutorCoac.Margin = new System.Windows.Forms.Padding(4);
             this.cmbExpedienteEjecutorCoac.Name = "cmbExpedienteEjecutorCoac";
