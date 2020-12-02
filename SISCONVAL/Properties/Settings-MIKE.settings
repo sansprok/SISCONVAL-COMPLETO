@@ -2,37 +2,37 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SISCONVAL.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
+    <Setting Name="AUXWANCHAQConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.1.28\sqlmdw28;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=wanchaqsql-2013&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.1.28\sqlmdw28;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=wanchaqsql-2013</Value>
+    </Setting>
     <Setting Name="AUXWANCHAQConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=.;Initial Catalog=AUXWANCHAQ;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.1.28\sqlmdw28;Initial Catalog=AUXWANCHAQ;Persist Security Info=True;User ID=sa;Password=wanchaqsql-2013&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=.;Initial Catalog=AUXWANCHAQ;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=192.168.1.28\sqlmdw28;Initial Catalog=AUXWANCHAQ;Persist Security Info=True;User ID=sa;Password=wanchaqsql-2013</Value>
     </Setting>
     <Setting Name="AUXWANCHAQConnectionString2" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.6\SSQLMDWPMSER06;Initial Catalog=AUXWANCHAQ;Persist Security Info=True;User ID=sa;Password=wanchaqsql-2013&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.1.28\sqlmdw28;Initial Catalog=AUXWANCHAQ;Persist Security Info=True;User ID=sa;Password=wanchaqsql-2013&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.6\SSQLMDWPMSER06;Initial Catalog=AUXWANCHAQ;Persist Security Info=True;User ID=sa;Password=wanchaqsql-2013</Value>
-    </Setting>
-    <Setting Name="AUXWANCHAQConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.6\SSQLMDWPMSER06;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=wanchaqsql-2013&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.6\SSQLMDWPMSER06;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=wanchaqsql-2013</Value>
+      <Value Profile="(Default)">Data Source=192.168.1.28\sqlmdw28;Initial Catalog=AUXWANCHAQ;Persist Security Info=True;User ID=sa;Password=wanchaqsql-2013</Value>
     </Setting>
     <Setting Name="AUXWANCHAQConnectionString3" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=.;Initial Catalog=AUXWANCHAQ;Persist Security Info=True;User ID=sa;Password=Server2010&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.1.28\sqlmdw28;Initial Catalog=AUXWANCHAQ;Persist Security Info=True;User ID=sa;Password=wanchaqsql-2013&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=.;Initial Catalog=AUXWANCHAQ;Persist Security Info=True;User ID=sa;Password=Server2010</Value>
+      <Value Profile="(Default)">Data Source=192.168.1.28\sqlmdw28;Initial Catalog=AUXWANCHAQ;Persist Security Info=True;User ID=sa;Password=wanchaqsql-2013</Value>
     </Setting>
   </Settings>
 </SettingsFile>

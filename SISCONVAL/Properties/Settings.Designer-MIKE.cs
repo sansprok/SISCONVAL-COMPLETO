@@ -26,29 +26,8 @@ namespace SISCONVAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=AUXWANCHAQ;Integrated Security=True")]
-        public string AUXWANCHAQConnectionString1 {
-            get {
-                return ((string)(this["AUXWANCHAQConnectionString1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.6\\SSQLMDWPMSER06;Initial Catalog=AUXWANCHAQ;Persist Securit" +
-            "y Info=True;User ID=sa;Password=wanchaqsql-2013")]
-        public string AUXWANCHAQConnectionString2 {
-            get {
-                return ((string)(this["AUXWANCHAQConnectionString2"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.6\\SSQLMDWPMSER06;Initial Catalog=AUXWANCHAQ;User ID=sa;Pass" +
-            "word=wanchaqsql-2013")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.28\\sqlmdw28;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=" +
+            "wanchaqsql-2013")]
         public string AUXWANCHAQConnectionString {
             get {
                 return ((string)(this["AUXWANCHAQConnectionString"]));
@@ -58,8 +37,30 @@ namespace SISCONVAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=AUXWANCHAQ;Persist Security Info=True;User ID=sa;Pa" +
-            "ssword=Server2010")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.28\\sqlmdw28;Initial Catalog=AUXWANCHAQ;Persist Security Inf" +
+            "o=True;User ID=sa;Password=wanchaqsql-2013")]
+        public string AUXWANCHAQConnectionString1 {
+            get {
+                return ((string)(this["AUXWANCHAQConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.28\\sqlmdw28;Initial Catalog=AUXWANCHAQ;Persist Security Inf" +
+            "o=True;User ID=sa;Password=wanchaqsql-2013")]
+        public string AUXWANCHAQConnectionString2 {
+            get {
+                return ((string)(this["AUXWANCHAQConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.28\\sqlmdw28;Initial Catalog=AUXWANCHAQ;Persist Security Inf" +
+            "o=True;User ID=sa;Password=wanchaqsql-2013")]
         public string AUXWANCHAQConnectionString3 {
             get {
                 return ((string)(this["AUXWANCHAQConnectionString3"]));

@@ -23,7 +23,7 @@ namespace SISCONVAL
         string pFANROEXPEDIENTE;
         int pFAANIORESOLUCION;
         SqlConnection sqlcon = new SqlConnection(@"Data Source=192.168.1.28\sqlmdw28;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=wanchaqsql-2013");
-       // SqlConnection sqlcon = new SqlConnection(@"Data Source=.;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=Server2010");
+        //SqlConnection sqlcon = new SqlConnection(@"Data Source=.;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=Server2010");
         //SqlConnection sqlcon = new SqlConnection(@"Data Source=.;Initial Catalog=AUXWANCHAQ;Integrated Security=True");
         public FrmReportCrisResolucionInicioOP(int FNNRORESOLUCION, string FAIDCIUDADANO, string FANROEXPEDIENTE, int FAANIORESOLUCION)
         {

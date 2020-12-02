@@ -10,9 +10,12 @@
     }
 }
 
-namespace SISCONVAL.DS_VALORESTableAdapters {
-    
-    
+namespace SISCONVAL.DS_VALORESTableAdapters
+{
+    partial class PA_CONTROLDEUDA_DATOSVALOR_MASIVTableAdapter
+    {
+    }
+
     public partial class ORDENESPAGOP2P3TableAdapter {
     }
 }
