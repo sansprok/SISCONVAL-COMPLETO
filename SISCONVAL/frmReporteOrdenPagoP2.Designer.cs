@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rpvOrdenPagoP2 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DS_VALORES = new SISCONVAL.DS_VALORES();
             this.ORDENESPAGOP2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DS_VALORES = new SISCONVAL.DS_VALORES();
+            this.rpvOrdenPagoP2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ORDENESPAGOP2TableAdapter = new SISCONVAL.DS_VALORESTableAdapters.ORDENESPAGOP2TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_VALORES)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ORDENESPAGOP2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_VALORES)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ORDENESPAGOP2BindingSource
+            // 
+            this.ORDENESPAGOP2BindingSource.DataMember = "ORDENESPAGOP2";
+            this.ORDENESPAGOP2BindingSource.DataSource = this.DS_VALORES;
+            // 
+            // DS_VALORES
+            // 
+            this.DS_VALORES.DataSetName = "DS_VALORES";
+            this.DS_VALORES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rpvOrdenPagoP2
             // 
@@ -50,16 +60,6 @@
             this.rpvOrdenPagoP2.ServerReport.BearerToken = null;
             this.rpvOrdenPagoP2.Size = new System.Drawing.Size(800, 450);
             this.rpvOrdenPagoP2.TabIndex = 0;
-            // 
-            // DS_VALORES
-            // 
-            this.DS_VALORES.DataSetName = "DS_VALORES";
-            this.DS_VALORES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ORDENESPAGOP2BindingSource
-            // 
-            this.ORDENESPAGOP2BindingSource.DataMember = "ORDENESPAGOP2";
-            this.ORDENESPAGOP2BindingSource.DataSource = this.DS_VALORES;
             // 
             // ORDENESPAGOP2TableAdapter
             // 
@@ -75,8 +75,8 @@
             this.Text = "frmReporteOrdenPagoP2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmReporteOrdenPagoP2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DS_VALORES)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ORDENESPAGOP2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_VALORES)).EndInit();
             this.ResumeLayout(false);
 
         }

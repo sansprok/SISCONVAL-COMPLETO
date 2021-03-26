@@ -17,7 +17,7 @@ namespace SISCONVAL
         string pFADIRECCION;
         int pFATIPO;
         SqlConnection sqlcon= new SqlConnection(@"Data Source=192.168.1.28\sqlmdw28;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=wanchaqsql-2013");
-        //SqlConnection sqlcon = new SqlConnection(@"Data Source=.;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=Server2010");
+       // SqlConnection sqlcon = new SqlConnection(@"Data Source=.;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=Server2010");
         public frmReportCristalEstadoMasivo(string FAIDCIUDADANO, string FADIRECCION, int FATIPO)
         {
             InitializeComponent();

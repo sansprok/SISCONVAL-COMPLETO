@@ -17,7 +17,7 @@ namespace SISCONVAL
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmPrincipal());
-
+           //// Application.Run(new frmReportCristalEstadoMasivo("", "urb. ttio norte", 0));
             //Application.Run(new frmEstadoActualDeuda());
 
             // Application.Run(new frmControlDeuda());C:\Users\USER\OneDrive\SISTEMAS WANCHAQ\ControlValores\VERSION DE TRABAJO\SISCONVAL\SISCONVAL\Program.cs
