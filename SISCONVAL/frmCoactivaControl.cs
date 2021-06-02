@@ -18,7 +18,7 @@ namespace SISCONVAL
         {
             InitializeComponent();
             txtExpedienteAnio.Text = DateTime.Today.Year.ToString();
-            dgvExpedientesCoac.DataSource = from R in BD.REQCOACGEN where R.FAANIOEXPED==txtExpedienteAnio.Text && R.FATIPOVALOR==TipoValor select new {R.FAANIOEXPED, R.FANROEXPED, R.FAANIORESOLUCION, R.FANRORESOLUCION, R.FAIDCIUDADANO,R.FAAPELLIDOSYNOMBRES, R.FAANIOINICIO,R.FAANIOFIN,R.FAREQCALIFICA,R.FNIMPCOACT, R.FNCOSPROCE, R.FADOMFISCAL };
+            //dgvExpedientesCoac.DataSource = from R in BD.REQCOACGEN where R.FAANIOEXPED==txtExpedienteAnio.Text && R.FATIPOVALOR==TipoValor select new {R.FAANIOEXPED, R.FANROEXPED, R.FAANIORESOLUCION, R.FANRORESOLUCION, R.FAIDCIUDADANO,R.FAAPELLIDOSYNOMBRES, R.FAANIOINICIO,R.FAANIOFIN,R.FAREQCALIFICA,R.FNIMPCOACT, R.FNCOSPROCE, R.FADOMFISCAL };
             /*INICIO DE CONFIGURACION DEL GRID*/
 
             dgvExpedientesCoac.MultiSelect = true;
@@ -103,13 +103,14 @@ namespace SISCONVAL
                     txtExpedienteNroReso.Text = expediente.FANRORESOLUCION;
                     txtExpedienteNro.Text = expediente.FANROEXPED;
                     txtExpedienteAnio.Text = expediente.FAANIOEXPED;
+                    txtAnioValor.Text = expediente.FAANIORESOLUCION;
                     cmbExpedienteCalifica.Text = (from C in BD.CALIFICACION where C.FACODCALIFI == expediente.FAREQCALIFICA select C.FADESCALIFI).First().ToString();
                     dtpExpedienteFechaNotificacion.Text = expediente.FDFECNOTIF.ToString();
                     txtExpObservacion.Text = expediente.FAOBSERVACION;
                     cmbExpedienteAuxiliar.SelectedValue = expediente.FNCODAUXILIAR;
                     cmbExpedienteNotificador.SelectedValue = expediente.FNCODNOTIFICADOR;
                     dgvExpedientesCoac.ClearSelection();
-                   // PintarGrid_EstadoCuentaIP(txtExpedienteIdCiudadano.Text);
+                  //  PintarGrid_EstadoCuentaIP(txtExpedienteIdCiudadano.Text);
                 }
             }
             catch (Exception)
@@ -220,9 +221,9 @@ namespace SISCONVAL
 
         private void txtExpedienteNroReso_TextChanged(object sender, EventArgs e)
         {
-            try
+            /*try
             {
-                /*
+                
                 {
 
                     dgvExpedientesCoac.DataSource = from V in BD.REQCOACGEN where V.FANRORESOLUCION == txtExpedienteNroReso.Text && V.FAANIOEXPED == txtExpedienteAnio.Text && V.FATIPOVALOR == (rdbRD.Checked ? "RD" : "OP") select new { V.FAANIOEXPED, V.FANROEXPED, V.FAANIORESOLUCION, V.FANRORESOLUCION, IDCIUDADANO = V.FAIDCIUDADANO, V.FAAPELLIDOSYNOMBRES, V.FAANIOINICIO, V.FAANIOFIN, V.FAREQCALIFICA, V.FNIMPCOACT, V.FNCOSPROCE, V.FADOMFISCAL };
@@ -264,7 +265,7 @@ namespace SISCONVAL
                     txtAnioValor.Text = Resolucion.FAANIORESOLUCION;//////////////////
                     dgvExpedientesCoac.ClearSelection();
                     PintarGrid_EstadoCuentaIP(txtExpedienteIdCiudadano.Text);
-                }*/
+                }
             }
 #pragma warning disable CS0168 // La variable 'error' se ha declarado pero nunca se usa
             catch (Exception error)
@@ -275,7 +276,7 @@ namespace SISCONVAL
                    // MessageBox.Show("NUMERO DE RD NO EXISTE O ERROR DURANTE LA OPERACIÓN: txtExpedienteNroReso_TextChanged, VUELVA A INTENTARLO. SI EL PROBLEMA CONTINUA COMUNÍQUESE CON EL ÁREA DE INFORMÁTICA. ");
                 }
 
-            }
+            }*/
         }
 
         private void txtExpedienteNro_KeyPress(object sender, KeyPressEventArgs e)
@@ -436,6 +437,9 @@ namespace SISCONVAL
                 int anioini = int.Parse(ResolucionCoac.First().FAANIOINICIO.ToString());
                 int aniofin = int.Parse(ResolucionCoac.First().FAANIOFIN.ToString());
 
+
+
+                MessageBox.Show("anio ini: "+anioini +" anio fin:"+aniofin);
                 var VistaPreviaRes = from V in BD.PA_COAC_EMISIONRESORETENCION(txtExpedienteIdCiudadano.Text, anioini, aniofin, int.Parse(txtExpedienteNroReso.Text), int.Parse(txtAnioValor.Text),int.Parse(txtExpedienteAnio.Text), (rdbRD.Checked?"RD":"OP"), 6) select V;
 
                 DateTime fechaactualizacion = VistaPreviaRes.First().FECHAULTIMAACTUALIZACION.Value;
@@ -459,9 +463,9 @@ namespace SISCONVAL
 
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                MessageBox.Show("Se produjo un error, PENDIENTE DE TRANSFERENCIA A COAC");
+                MessageBox.Show("Se produjo un error, PENDIENTE DE TRANSFERENCIA A COAC: *"+err.ToString());
             }
             
 
@@ -481,7 +485,7 @@ namespace SISCONVAL
             //op.ShowDialog();
         }
         public void LlenarEstadoRequerimientos()
-        {
+        { /*
             var tablareqcoac = from R in BD.REQCOACGEN select R;
             lblAdmitidos.Text = (from R in BD.REQCOACGEN where R.FAANIOEXPED== txtExpedienteAnio.Text && R.FAREQCALIFICA == "A" && R.FATIPOVALOR == (rdbOP.Checked ? "OP" : "RD") select R).Count().ToString();
             lblDevueltos.Text = (from R in BD.REQCOACGEN where R.FAANIOEXPED == txtExpedienteAnio.Text && R.FAREQCALIFICA == "D" && R.FATIPOVALOR == (rdbOP.Checked ? "OP" : "RD") select R).Count().ToString();
@@ -489,7 +493,7 @@ namespace SISCONVAL
             lblObservados.Text = (from R in BD.REQCOACGEN where R.FAANIOEXPED == txtExpedienteAnio.Text && R.FAREQCALIFICA == "O" && R.FATIPOVALOR == (rdbOP.Checked ? "OP" : "RD") select R).Count().ToString();
             lblOtros.Text = (from R in BD.REQCOACGEN where R.FAANIOEXPED == txtExpedienteAnio.Text && R.FAREQCALIFICA == "S" || R.FAREQCALIFICA == "P" || R.FAREQCALIFICA == "N" || R.FAREQCALIFICA == "X" && R.FATIPOVALOR == (rdbOP.Checked ? "OP" : "RD") select R).Count().ToString();
 
-
+            */
         }
         private void frmCoactivaControl_Load(object sender, EventArgs e)
         {
@@ -530,7 +534,7 @@ namespace SISCONVAL
             //    //    }
             //    //}
             //}
-
+            //pintarGridCoac();
 
         }
         public void pintarGridCoac()
@@ -570,7 +574,7 @@ namespace SISCONVAL
             {
                 TipoValor = "RD";
             }
-            LlenarEstadoRequerimientos();
+           // LlenarEstadoRequerimientos();
         }
 
         private void RdbRD_CheckedChanged(object sender, EventArgs e)
@@ -624,6 +628,7 @@ namespace SISCONVAL
                     dtpExpedienteFechaNotificacion.Value = Resolucion.FDFECNOTIF.Value;
 
                     txtExpedienteAnio.Text = Resolucion.FAANIOEXPED;
+                    txtAnioValor.Text = Resolucion.FAANIORESOLUCION;
                     txtExpedienteNro.Text = Resolucion.FANROEXPED;
 
                     // txtExpedienteNroReso.Text = Resolucion.FANROEXPED;
@@ -632,26 +637,38 @@ namespace SISCONVAL
                     dtpExpedienteFechaVencimiento.Value = Resolucion.FDFECVENCI.Value;
                     txtExpObservacion.Text = Resolucion.FAOBSERVACION;
 
-                    string valorcajacostas = decimal.Parse((from C in BD.PA_COAC_COSTASPROCESALES(txtExpedienteIdCiudadano.Text) select C.Saldo).First().ToString()).ToString("N2");
+                    // MessageBox.Show(BD.PA_COAC_COSTASPROCESALES(txtExpedienteIdCiudadano.Text).First().Saldo.ToString());
+                   // PintarGrid_EstadoCuentaIP(txtExpedienteIdCiudadano.Text);
 
-                    if (valorcajacostas != Resolucion.FNCOSPROCE.ToString())
+                    if ( Convert.ToInt32(BD.PA_COAC_COSTASPROCESALES(txtExpedienteIdCiudadano.Text).First().Saldo.Value) == decimal.Parse("0") )//se corrigio el sp
                     {
-                        MessageBox.Show("DEBE ACTUALIZAR LAS COSTAS PROCESALES ANTES DE CONTINUAR.  Valor correcto: " + valorcajacostas);
-                        //txtExpedienteCostasProc.Text = Resolucion.FNCOSPROCE.ToString();
-                        txtExpedienteCostasProc.Text = valorcajacostas;
+                        MessageBox.Show("PENDIENTE DE GENERAR LAS ORDENES DE PAGO DE LAS COSTAS PROCESALES.");
                     }
                     else
                     {
-                        txtExpedienteCostasProc.Text = Resolucion.FNCOSPROCE.ToString();
+                        string valorcajacostas = decimal.Parse((from C in BD.PA_COAC_COSTASPROCESALES(txtExpedienteIdCiudadano.Text) select C.Saldo).First().ToString()).ToString("N2");
+                        //string valorcajacostas = "";
+                        if (valorcajacostas != Resolucion.FNCOSPROCE.ToString())
+                        {
+                            MessageBox.Show("DEBE ACTUALIZAR LAS COSTAS PROCESALES ANTES DE CONTINUAR.  Valor correcto: " + valorcajacostas);
+                            //txtExpedienteCostasProc.Text = Resolucion.FNCOSPROCE.ToString();
+                            txtExpedienteCostasProc.Text = valorcajacostas;
+                        }
+                        else
+                        {
+                            txtExpedienteCostasProc.Text = Resolucion.FNCOSPROCE.ToString();
+                        }
+
+
+                        cmbExpedienteAuxiliar.SelectedValue = Resolucion.FNCODAUXILIAR;
+                        cmbExpedienteNotificador.SelectedValue = Resolucion.FNCODNOTIFICADOR;
+                        txtFechaResolucion.Text = Resolucion.FDFECIMPRE;
+                        txtAnioValor.Text = Resolucion.FAANIORESOLUCION;//////////////////
+                        dgvExpedientesCoac.ClearSelection();
+                        
                     }
-
-
-                    cmbExpedienteAuxiliar.SelectedValue = Resolucion.FNCODAUXILIAR;
-                    cmbExpedienteNotificador.SelectedValue = Resolucion.FNCODNOTIFICADOR;
-                    txtFechaResolucion.Text = Resolucion.FDFECIMPRE;
-                    txtAnioValor.Text = Resolucion.FAANIORESOLUCION;//////////////////
-                    dgvExpedientesCoac.ClearSelection();
                     PintarGrid_EstadoCuentaIP(txtExpedienteIdCiudadano.Text);
+
                 }
                 else
                 {
@@ -676,11 +693,16 @@ namespace SISCONVAL
                 // cmbExpedienteCalifica.Text = (from V in BD.CALIFICACION where V.FACODCALIFI == dgvExpedientesCoac.Rows[dgvExpedientesCoac.CurrentCell.RowIndex].Cells["FAREQCALIFICA"].Value.ToString() select V.FADESCALIFI).First().ToString();
                 
             }
-            catch (Exception)
+            catch (Exception ERR)
             {
-                MessageBox.Show("Se presento un error, vuelva a intentarlo");
+                MessageBox.Show("Se presento un error, vuelva a intentarlo: *"+ERR.ToString());
             }
             
+        }
+
+        private void btnExpedienteBuscarEjecutor_Click(object sender, EventArgs e)
+        {
+
         }
     } 
 }

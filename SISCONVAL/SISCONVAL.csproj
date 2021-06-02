@@ -106,6 +106,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmEstadoActual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstadoActual.Designer.cs">
+      <DependentUpon>frmEstadoActual.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReporteRD_Masiv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +311,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Valores.dbml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmEstadoActual.resx">
+      <DependentUpon>frmEstadoActual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReporteRD_Masiv.resx">
       <DependentUpon>frmReporteRD_Masiv.cs</DependentUpon>
     </EmbeddedResource>

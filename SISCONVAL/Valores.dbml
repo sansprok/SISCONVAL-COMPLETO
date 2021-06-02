@@ -1,11 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AUXWANCHAQ" Class="ValoresDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=AUXWANCHAQ;Integrated Security=True" SettingsObjectName="SISCONVAL.Properties.Settings" SettingsPropertyName="AUXWANCHAQConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.ESTADORD" Member="ESTADORD">
-    <Type Name="ESTADORD">
-      <Column Name="facodestadord" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="fadesestado" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MDWSERVER\SQLMDW28;Initial Catalog=AUXWANCHAQ;User ID=sa" SettingsObjectName="SISCONVAL.Properties.Settings" SettingsPropertyName="AUXWANCHAQConnectionString4" Provider="System.Data.SqlClient" />
   <Table Name="dbo.NOTIFICADOR" Member="NOTIFICADOR">
     <Type Name="NOTIFICADOR">
       <Column Name="FACODNOTI" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -148,6 +142,43 @@
       <Column Name="FECHAACTUALIZACION" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.REQCOAC_RESRET" Member="REQCOAC_RESRET">
+    <Type Name="REQCOAC_RESRET">
+      <Column Name="FNIDRESRET" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FANROEXPED" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="FANRORESOLUCION" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="FAANIORESOLUCION" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="FAANIOEXPED" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="FATIPOVALOR" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="FNCODAUXILIAR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FAEJECUTOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FAIDCIUDADANO" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="FAAPELLIDOSYNOMBRES" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FADOMFISCAL" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="faanioinicio" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="faaniofin" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="INSOLUTO_RD" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="INTERESES_RD" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="GASTOSADMINISTRATIVOS_RD" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="COSTASPROCESALES" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="DEUDATOTAL" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="FECHAGENERACION_RESRET" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="IdCiudadano" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="INSOLUTO_KARDEX" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GASADMIN_KARDEX" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MORA_KARDEX" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="FECHAULTIMAACTUALIZACION" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DESDE" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="HASTA" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="TOTAL_ACUMULADO" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ESTADORD" Member="ESTADORD">
+    <Type Name="ESTADORD">
+      <Column Name="facodestadord" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="fadesestado" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.REQCOACGEN" Member="REQCOACGEN">
     <Type Name="REQCOACGEN">
       <Column Name="FAIDCIUDADANO" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -180,37 +211,6 @@
       <Column Name="FNDIASTRANS" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="FADELETE" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="FATIPOVALOR" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.REQCOAC_RESRET" Member="REQCOAC_RESRET">
-    <Type Name="REQCOAC_RESRET">
-      <Column Name="FNIDRESRET" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FANROEXPED" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
-      <Column Name="FANRORESOLUCION" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
-      <Column Name="FAANIORESOLUCION" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
-      <Column Name="FAANIOEXPED" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
-      <Column Name="FATIPOVALOR" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
-      <Column Name="FNCODAUXILIAR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FAEJECUTOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FAIDCIUDADANO" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
-      <Column Name="FAAPELLIDOSYNOMBRES" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="FADOMFISCAL" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="faanioinicio" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
-      <Column Name="faaniofin" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
-      <Column Name="INSOLUTO_RD" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
-      <Column Name="INTERESES_RD" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
-      <Column Name="GASTOSADMINISTRATIVOS_RD" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
-      <Column Name="COSTASPROCESALES" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
-      <Column Name="DEUDATOTAL" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
-      <Column Name="FECHAGENERACION_RESRET" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
-      <Column Name="IdCiudadano" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="INSOLUTO_KARDEX" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="GASADMIN_KARDEX" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="MORA_KARDEX" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="FECHAULTIMAACTUALIZACION" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="DESDE" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
-      <Column Name="HASTA" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
-      <Column Name="TOTAL_ACUMULADO" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.PA_CONTROLDEUDA_MODIFICARVALORCAB" Method="PA_CONTROLDEUDA_MODIFICARVALORCAB">
@@ -300,23 +300,6 @@
       <Column Name="SALDO" Type="System.Decimal" DbType="Money" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.PA_ESTADOCUETA_DETALLES" Method="PA_ESTADOCUETA_DETALLES">
-    <Parameter Name="FADIRECCION" Parameter="fADIRECCION" Type="System.String" DbType="VarChar(255)" />
-    <ElementType Name="PA_ESTADOCUETA_DETALLESResult">
-      <Column Name="Id" Type="System.String" DbType="NChar(9) NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
-      <Column Name="DIRECCION" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
-      <Column Name="NUMERO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DESDE" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
-      <Column Name="HASTA" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
-      <Column Name="CANTIDAD_AÑOS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PREDIAL_INSOLUTO" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="PREDIAL_GASADMIN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="PREDIAL_MORA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="PREDIAL_TOTAL" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="SEGURIDAD" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.PA_CONTROLDEUDA_GENERARVALOR_INDIVIDUAL" Method="PA_CONTROLDEUDA_GENERARVALOR_INDIVIDUAL">
     <Parameter Name="FAANIORESOLUCION" Parameter="fAANIORESOLUCION" Type="System.Int32" DbType="Int" />
     <Parameter Name="FAIDCIUDADANO" Parameter="fAIDCIUDADANO" Type="System.String" DbType="VarChar(9)" />
@@ -370,12 +353,6 @@
       <Column Name="FDFECHAGENERACION" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
       <Column Name="FDFECHAMODIF" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="FAOPERADOR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.PA_COAC_COSTASPROCESALES" Method="PA_COAC_COSTASPROCESALES">
-    <Parameter Name="FAIDCIUDADANO" Parameter="fAIDCIUDADANO" Type="System.String" DbType="VarChar(9)" />
-    <ElementType Name="PA_COAC_COSTASPROCESALESResult">
-      <Column Name="Saldo" Type="System.Decimal" DbType="Money" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.PA_COAC_ESTADODEDEUDA_IP" Method="PA_COAC_ESTADODEDEUDA_IP">
@@ -449,5 +426,28 @@
     <Parameter Name="aniodesde" Type="System.Int32" DbType="Int" />
     <Parameter Name="aniohasta" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.PA_COAC_COSTASPROCESALES" Method="PA_COAC_COSTASPROCESALES">
+    <Parameter Name="FAIDCIUDADANO" Parameter="fAIDCIUDADANO" Type="System.String" DbType="VarChar(9)" />
+    <ElementType Name="PA_COAC_COSTASPROCESALESResult">
+      <Column Name="Saldo" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PA_ESTADOCUETA_DETALLES" Method="PA_ESTADOCUETA_DETALLES">
+    <Parameter Name="FADIRECCION" Parameter="fADIRECCION" Type="System.String" DbType="VarChar(255)" />
+    <ElementType Name="PA_ESTADOCUETA_DETALLESResult">
+      <Column Name="Id" Type="System.String" DbType="NChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="DIRECCION" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="NUMERO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DESDE" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="HASTA" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="CANTIDAD_AÑOS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PREDIAL_INSOLUTO" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PREDIAL_GASADMIN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PREDIAL_MORA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PREDIAL_TOTAL" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="SEGURIDAD" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

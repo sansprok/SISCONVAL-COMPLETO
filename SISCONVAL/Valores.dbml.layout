@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 14.5" name="Valores">
   <DataContextMoniker Name="/ValoresDataContext" />
   <nestedChildShapes>
-    <classShape Id="4ea72f68-0d11-4e64-93ad-9b4d18392024" absoluteBounds="3.125, 1, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/ValoresDataContext/ESTADORD" />
-      <nestedChildShapes>
-        <elementListCompartment Id="2f075da9-0b84-4cec-946b-015a56a62fc2" absoluteBounds="3.14, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="04e8a127-395f-4197-9d07-f2dd783017b8" absoluteBounds="3.125, 2.375, 2, 1.3862939453125">
       <DataClassMoniker Name="/ValoresDataContext/NOTIFICADOR" />
       <nestedChildShapes>
@@ -62,16 +56,22 @@
         <elementListCompartment Id="87870463-50b6-4003-87c0-699ac3c04b1c" absoluteBounds="8.64, 6.71, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e9b1faea-21a8-4862-8d55-ef48f0b46f38" absoluteBounds="5.75, 5.625, 2, 6.5784326171875">
-      <DataClassMoniker Name="/ValoresDataContext/REQCOACGEN" />
-      <nestedChildShapes>
-        <elementListCompartment Id="eb2384cb-fed9-483e-a5cb-404a2c2a48d9" absoluteBounds="5.765, 6.085, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="e01d4b83-9dcb-4e0e-a7c6-559b7e821598" absoluteBounds="3, 8.25, 2, 6.0015283203125">
       <DataClassMoniker Name="/ValoresDataContext/REQCOAC_RESRET" />
       <nestedChildShapes>
         <elementListCompartment Id="6b08a50e-e103-46d1-b45d-92b240584ded" absoluteBounds="3.015, 8.71, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="471690bd-134f-46ad-a028-3dfc8bf7fded" absoluteBounds="3, 0.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/ValoresDataContext/ESTADORD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79f2f53d-467f-44f9-9193-ff0860ff188e" absoluteBounds="3.015, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="58627dc9-9520-407d-ba43-b1302e864943" absoluteBounds="5.75, 5.5, 2, 6.5784326171875">
+      <DataClassMoniker Name="/ValoresDataContext/REQCOACGEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="325ec70b-8c62-467c-b49e-e3b12b431733" absoluteBounds="5.765, 5.9600000000000009, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

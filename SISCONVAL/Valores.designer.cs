@@ -36,16 +36,16 @@ namespace SISCONVAL
     partial void InsertAUXILIAR(AUXILIAR instance);
     partial void UpdateAUXILIAR(AUXILIAR instance);
     partial void DeleteAUXILIAR(AUXILIAR instance);
-    partial void InsertREQCOACGEN(REQCOACGEN instance);
-    partial void UpdateREQCOACGEN(REQCOACGEN instance);
-    partial void DeleteREQCOACGEN(REQCOACGEN instance);
     partial void InsertREQCOAC_RESRET(REQCOAC_RESRET instance);
     partial void UpdateREQCOAC_RESRET(REQCOAC_RESRET instance);
     partial void DeleteREQCOAC_RESRET(REQCOAC_RESRET instance);
+    partial void InsertREQCOACGEN(REQCOACGEN instance);
+    partial void UpdateREQCOACGEN(REQCOACGEN instance);
+    partial void DeleteREQCOACGEN(REQCOACGEN instance);
     #endregion
 		
 		public ValoresDataContext() : 
-				base(global::SISCONVAL.Properties.Settings.Default.AUXWANCHAQConnectionString1, mappingSource)
+				base(global::SISCONVAL.Properties.Settings.Default.AUXWANCHAQConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -72,14 +72,6 @@ namespace SISCONVAL
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<ESTADORD> ESTADORD
-		{
-			get
-			{
-				return this.GetTable<ESTADORD>();
-			}
 		}
 		
 		public System.Data.Linq.Table<NOTIFICADOR> NOTIFICADOR
@@ -154,19 +146,27 @@ namespace SISCONVAL
 			}
 		}
 		
-		public System.Data.Linq.Table<REQCOACGEN> REQCOACGEN
-		{
-			get
-			{
-				return this.GetTable<REQCOACGEN>();
-			}
-		}
-		
 		public System.Data.Linq.Table<REQCOAC_RESRET> REQCOAC_RESRET
 		{
 			get
 			{
 				return this.GetTable<REQCOAC_RESRET>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ESTADORD> ESTADORD
+		{
+			get
+			{
+				return this.GetTable<ESTADORD>();
+			}
+		}
+		
+		public System.Data.Linq.Table<REQCOACGEN> REQCOACGEN
+		{
+			get
+			{
+				return this.GetTable<REQCOACGEN>();
 			}
 		}
 		
@@ -219,13 +219,6 @@ namespace SISCONVAL
 			return ((ISingleResult<PA_COAC_ESTADOACTUALDEUDAResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.PA_ESTADOCUETA_DETALLES")]
-		public ISingleResult<PA_ESTADOCUETA_DETALLESResult> PA_ESTADOCUETA_DETALLES([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FADIRECCION", DbType="VarChar(255)")] string fADIRECCION)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fADIRECCION);
-			return ((ISingleResult<PA_ESTADOCUETA_DETALLESResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.PA_CONTROLDEUDA_GENERARVALOR_INDIVIDUAL")]
 		public int PA_CONTROLDEUDA_GENERARVALOR_INDIVIDUAL([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FAANIORESOLUCION", DbType="Int")] System.Nullable<int> fAANIORESOLUCION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FAIDCIUDADANO", DbType="VarChar(9)")] string fAIDCIUDADANO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FAANIODESDE", DbType="Int")] System.Nullable<int> fAANIODESDE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FAANIOHASTA", DbType="Int")] System.Nullable<int> fAANIOHASTA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FAOPERADOR", DbType="VarChar(50)")] string fAOPERADOR)
 		{
@@ -245,13 +238,6 @@ namespace SISCONVAL
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fAANIORESOLUCION, fNNRORESOLUCION_INI, fNNRORESOLUCION_FIN);
 			return ((ISingleResult<PA_CONTROLDEUDA_DATOSVALOR_MASIVResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.PA_COAC_COSTASPROCESALES")]
-		public ISingleResult<PA_COAC_COSTASPROCESALESResult> PA_COAC_COSTASPROCESALES([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FAIDCIUDADANO", DbType="VarChar(9)")] string fAIDCIUDADANO)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fAIDCIUDADANO);
-			return ((ISingleResult<PA_COAC_COSTASPROCESALESResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.PA_COAC_ESTADODEDEUDA_IP")]
@@ -281,50 +267,19 @@ namespace SISCONVAL
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCiudadano, idPropiedad, aniodesde, aniohasta);
 			return ((int)(result.ReturnValue));
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ESTADORD")]
-	public partial class ESTADORD
-	{
 		
-		private string _facodestadord;
-		
-		private string _fadesestado;
-		
-		public ESTADORD()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.PA_COAC_COSTASPROCESALES")]
+		public ISingleResult<PA_COAC_COSTASPROCESALESResult> PA_COAC_COSTASPROCESALES([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FAIDCIUDADANO", DbType="VarChar(9)")] string fAIDCIUDADANO)
 		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fAIDCIUDADANO);
+			return ((ISingleResult<PA_COAC_COSTASPROCESALESResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_facodestadord", DbType="VarChar(1)")]
-		public string facodestadord
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.PA_ESTADOCUETA_DETALLES")]
+		public ISingleResult<PA_ESTADOCUETA_DETALLESResult> PA_ESTADOCUETA_DETALLES([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FADIRECCION", DbType="VarChar(255)")] string fADIRECCION)
 		{
-			get
-			{
-				return this._facodestadord;
-			}
-			set
-			{
-				if ((this._facodestadord != value))
-				{
-					this._facodestadord = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fadesestado", DbType="VarChar(200)")]
-		public string fadesestado
-		{
-			get
-			{
-				return this._fadesestado;
-			}
-			set
-			{
-				if ((this._fadesestado != value))
-				{
-					this._fadesestado = value;
-				}
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fADIRECCION);
+			return ((ISingleResult<PA_ESTADOCUETA_DETALLESResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -2411,6 +2366,737 @@ namespace SISCONVAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.REQCOAC_RESRET")]
+	public partial class REQCOAC_RESRET : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _FNIDRESRET;
+		
+		private string _FANROEXPED;
+		
+		private string _FANRORESOLUCION;
+		
+		private string _FAANIORESOLUCION;
+		
+		private string _FAANIOEXPED;
+		
+		private string _FATIPOVALOR;
+		
+		private int _FNCODAUXILIAR;
+		
+		private System.Nullable<int> _FAEJECUTOR;
+		
+		private string _FAIDCIUDADANO;
+		
+		private string _FAAPELLIDOSYNOMBRES;
+		
+		private string _FADOMFISCAL;
+		
+		private string _faanioinicio;
+		
+		private string _faaniofin;
+		
+		private System.Nullable<decimal> _INSOLUTO_RD;
+		
+		private System.Nullable<decimal> _INTERESES_RD;
+		
+		private System.Nullable<decimal> _GASTOSADMINISTRATIVOS_RD;
+		
+		private decimal _COSTASPROCESALES;
+		
+		private System.Nullable<decimal> _DEUDATOTAL;
+		
+		private System.DateTime _FECHAGENERACION_RESRET;
+		
+		private string _IdCiudadano;
+		
+		private System.Nullable<decimal> _INSOLUTO_KARDEX;
+		
+		private System.Nullable<decimal> _GASADMIN_KARDEX;
+		
+		private System.Nullable<decimal> _MORA_KARDEX;
+		
+		private System.Nullable<System.DateTime> _FECHAULTIMAACTUALIZACION;
+		
+		private string _DESDE;
+		
+		private string _HASTA;
+		
+		private System.Nullable<decimal> _TOTAL_ACUMULADO;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnFNIDRESRETChanging(int value);
+    partial void OnFNIDRESRETChanged();
+    partial void OnFANROEXPEDChanging(string value);
+    partial void OnFANROEXPEDChanged();
+    partial void OnFANRORESOLUCIONChanging(string value);
+    partial void OnFANRORESOLUCIONChanged();
+    partial void OnFAANIORESOLUCIONChanging(string value);
+    partial void OnFAANIORESOLUCIONChanged();
+    partial void OnFAANIOEXPEDChanging(string value);
+    partial void OnFAANIOEXPEDChanged();
+    partial void OnFATIPOVALORChanging(string value);
+    partial void OnFATIPOVALORChanged();
+    partial void OnFNCODAUXILIARChanging(int value);
+    partial void OnFNCODAUXILIARChanged();
+    partial void OnFAEJECUTORChanging(System.Nullable<int> value);
+    partial void OnFAEJECUTORChanged();
+    partial void OnFAIDCIUDADANOChanging(string value);
+    partial void OnFAIDCIUDADANOChanged();
+    partial void OnFAAPELLIDOSYNOMBRESChanging(string value);
+    partial void OnFAAPELLIDOSYNOMBRESChanged();
+    partial void OnFADOMFISCALChanging(string value);
+    partial void OnFADOMFISCALChanged();
+    partial void OnfaanioinicioChanging(string value);
+    partial void OnfaanioinicioChanged();
+    partial void OnfaaniofinChanging(string value);
+    partial void OnfaaniofinChanged();
+    partial void OnINSOLUTO_RDChanging(System.Nullable<decimal> value);
+    partial void OnINSOLUTO_RDChanged();
+    partial void OnINTERESES_RDChanging(System.Nullable<decimal> value);
+    partial void OnINTERESES_RDChanged();
+    partial void OnGASTOSADMINISTRATIVOS_RDChanging(System.Nullable<decimal> value);
+    partial void OnGASTOSADMINISTRATIVOS_RDChanged();
+    partial void OnCOSTASPROCESALESChanging(decimal value);
+    partial void OnCOSTASPROCESALESChanged();
+    partial void OnDEUDATOTALChanging(System.Nullable<decimal> value);
+    partial void OnDEUDATOTALChanged();
+    partial void OnFECHAGENERACION_RESRETChanging(System.DateTime value);
+    partial void OnFECHAGENERACION_RESRETChanged();
+    partial void OnIdCiudadanoChanging(string value);
+    partial void OnIdCiudadanoChanged();
+    partial void OnINSOLUTO_KARDEXChanging(System.Nullable<decimal> value);
+    partial void OnINSOLUTO_KARDEXChanged();
+    partial void OnGASADMIN_KARDEXChanging(System.Nullable<decimal> value);
+    partial void OnGASADMIN_KARDEXChanged();
+    partial void OnMORA_KARDEXChanging(System.Nullable<decimal> value);
+    partial void OnMORA_KARDEXChanged();
+    partial void OnFECHAULTIMAACTUALIZACIONChanging(System.Nullable<System.DateTime> value);
+    partial void OnFECHAULTIMAACTUALIZACIONChanged();
+    partial void OnDESDEChanging(string value);
+    partial void OnDESDEChanged();
+    partial void OnHASTAChanging(string value);
+    partial void OnHASTAChanged();
+    partial void OnTOTAL_ACUMULADOChanging(System.Nullable<decimal> value);
+    partial void OnTOTAL_ACUMULADOChanged();
+    #endregion
+		
+		public REQCOAC_RESRET()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FNIDRESRET", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int FNIDRESRET
+		{
+			get
+			{
+				return this._FNIDRESRET;
+			}
+			set
+			{
+				if ((this._FNIDRESRET != value))
+				{
+					this.OnFNIDRESRETChanging(value);
+					this.SendPropertyChanging();
+					this._FNIDRESRET = value;
+					this.SendPropertyChanged("FNIDRESRET");
+					this.OnFNIDRESRETChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FANROEXPED", DbType="VarChar(4) NOT NULL", CanBeNull=false)]
+		public string FANROEXPED
+		{
+			get
+			{
+				return this._FANROEXPED;
+			}
+			set
+			{
+				if ((this._FANROEXPED != value))
+				{
+					this.OnFANROEXPEDChanging(value);
+					this.SendPropertyChanging();
+					this._FANROEXPED = value;
+					this.SendPropertyChanged("FANROEXPED");
+					this.OnFANROEXPEDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FANRORESOLUCION", DbType="VarChar(4) NOT NULL", CanBeNull=false)]
+		public string FANRORESOLUCION
+		{
+			get
+			{
+				return this._FANRORESOLUCION;
+			}
+			set
+			{
+				if ((this._FANRORESOLUCION != value))
+				{
+					this.OnFANRORESOLUCIONChanging(value);
+					this.SendPropertyChanging();
+					this._FANRORESOLUCION = value;
+					this.SendPropertyChanged("FANRORESOLUCION");
+					this.OnFANRORESOLUCIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FAANIORESOLUCION", DbType="VarChar(4)")]
+		public string FAANIORESOLUCION
+		{
+			get
+			{
+				return this._FAANIORESOLUCION;
+			}
+			set
+			{
+				if ((this._FAANIORESOLUCION != value))
+				{
+					this.OnFAANIORESOLUCIONChanging(value);
+					this.SendPropertyChanging();
+					this._FAANIORESOLUCION = value;
+					this.SendPropertyChanged("FAANIORESOLUCION");
+					this.OnFAANIORESOLUCIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FAANIOEXPED", DbType="VarChar(4) NOT NULL", CanBeNull=false)]
+		public string FAANIOEXPED
+		{
+			get
+			{
+				return this._FAANIOEXPED;
+			}
+			set
+			{
+				if ((this._FAANIOEXPED != value))
+				{
+					this.OnFAANIOEXPEDChanging(value);
+					this.SendPropertyChanging();
+					this._FAANIOEXPED = value;
+					this.SendPropertyChanged("FAANIOEXPED");
+					this.OnFAANIOEXPEDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FATIPOVALOR", DbType="VarChar(3)")]
+		public string FATIPOVALOR
+		{
+			get
+			{
+				return this._FATIPOVALOR;
+			}
+			set
+			{
+				if ((this._FATIPOVALOR != value))
+				{
+					this.OnFATIPOVALORChanging(value);
+					this.SendPropertyChanging();
+					this._FATIPOVALOR = value;
+					this.SendPropertyChanged("FATIPOVALOR");
+					this.OnFATIPOVALORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FNCODAUXILIAR", DbType="Int NOT NULL")]
+		public int FNCODAUXILIAR
+		{
+			get
+			{
+				return this._FNCODAUXILIAR;
+			}
+			set
+			{
+				if ((this._FNCODAUXILIAR != value))
+				{
+					this.OnFNCODAUXILIARChanging(value);
+					this.SendPropertyChanging();
+					this._FNCODAUXILIAR = value;
+					this.SendPropertyChanged("FNCODAUXILIAR");
+					this.OnFNCODAUXILIARChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FAEJECUTOR", DbType="Int")]
+		public System.Nullable<int> FAEJECUTOR
+		{
+			get
+			{
+				return this._FAEJECUTOR;
+			}
+			set
+			{
+				if ((this._FAEJECUTOR != value))
+				{
+					this.OnFAEJECUTORChanging(value);
+					this.SendPropertyChanging();
+					this._FAEJECUTOR = value;
+					this.SendPropertyChanged("FAEJECUTOR");
+					this.OnFAEJECUTORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FAIDCIUDADANO", DbType="VarChar(9) NOT NULL", CanBeNull=false)]
+		public string FAIDCIUDADANO
+		{
+			get
+			{
+				return this._FAIDCIUDADANO;
+			}
+			set
+			{
+				if ((this._FAIDCIUDADANO != value))
+				{
+					this.OnFAIDCIUDADANOChanging(value);
+					this.SendPropertyChanging();
+					this._FAIDCIUDADANO = value;
+					this.SendPropertyChanged("FAIDCIUDADANO");
+					this.OnFAIDCIUDADANOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FAAPELLIDOSYNOMBRES", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string FAAPELLIDOSYNOMBRES
+		{
+			get
+			{
+				return this._FAAPELLIDOSYNOMBRES;
+			}
+			set
+			{
+				if ((this._FAAPELLIDOSYNOMBRES != value))
+				{
+					this.OnFAAPELLIDOSYNOMBRESChanging(value);
+					this.SendPropertyChanging();
+					this._FAAPELLIDOSYNOMBRES = value;
+					this.SendPropertyChanged("FAAPELLIDOSYNOMBRES");
+					this.OnFAAPELLIDOSYNOMBRESChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FADOMFISCAL", DbType="VarChar(500)")]
+		public string FADOMFISCAL
+		{
+			get
+			{
+				return this._FADOMFISCAL;
+			}
+			set
+			{
+				if ((this._FADOMFISCAL != value))
+				{
+					this.OnFADOMFISCALChanging(value);
+					this.SendPropertyChanging();
+					this._FADOMFISCAL = value;
+					this.SendPropertyChanged("FADOMFISCAL");
+					this.OnFADOMFISCALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_faanioinicio", DbType="VarChar(4)")]
+		public string faanioinicio
+		{
+			get
+			{
+				return this._faanioinicio;
+			}
+			set
+			{
+				if ((this._faanioinicio != value))
+				{
+					this.OnfaanioinicioChanging(value);
+					this.SendPropertyChanging();
+					this._faanioinicio = value;
+					this.SendPropertyChanged("faanioinicio");
+					this.OnfaanioinicioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_faaniofin", DbType="VarChar(4)")]
+		public string faaniofin
+		{
+			get
+			{
+				return this._faaniofin;
+			}
+			set
+			{
+				if ((this._faaniofin != value))
+				{
+					this.OnfaaniofinChanging(value);
+					this.SendPropertyChanging();
+					this._faaniofin = value;
+					this.SendPropertyChanged("faaniofin");
+					this.OnfaaniofinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INSOLUTO_RD", DbType="Decimal(12,2)")]
+		public System.Nullable<decimal> INSOLUTO_RD
+		{
+			get
+			{
+				return this._INSOLUTO_RD;
+			}
+			set
+			{
+				if ((this._INSOLUTO_RD != value))
+				{
+					this.OnINSOLUTO_RDChanging(value);
+					this.SendPropertyChanging();
+					this._INSOLUTO_RD = value;
+					this.SendPropertyChanged("INSOLUTO_RD");
+					this.OnINSOLUTO_RDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INTERESES_RD", DbType="Decimal(12,2)")]
+		public System.Nullable<decimal> INTERESES_RD
+		{
+			get
+			{
+				return this._INTERESES_RD;
+			}
+			set
+			{
+				if ((this._INTERESES_RD != value))
+				{
+					this.OnINTERESES_RDChanging(value);
+					this.SendPropertyChanging();
+					this._INTERESES_RD = value;
+					this.SendPropertyChanged("INTERESES_RD");
+					this.OnINTERESES_RDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GASTOSADMINISTRATIVOS_RD", DbType="Decimal(12,2)")]
+		public System.Nullable<decimal> GASTOSADMINISTRATIVOS_RD
+		{
+			get
+			{
+				return this._GASTOSADMINISTRATIVOS_RD;
+			}
+			set
+			{
+				if ((this._GASTOSADMINISTRATIVOS_RD != value))
+				{
+					this.OnGASTOSADMINISTRATIVOS_RDChanging(value);
+					this.SendPropertyChanging();
+					this._GASTOSADMINISTRATIVOS_RD = value;
+					this.SendPropertyChanged("GASTOSADMINISTRATIVOS_RD");
+					this.OnGASTOSADMINISTRATIVOS_RDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COSTASPROCESALES", DbType="Decimal(12,2) NOT NULL")]
+		public decimal COSTASPROCESALES
+		{
+			get
+			{
+				return this._COSTASPROCESALES;
+			}
+			set
+			{
+				if ((this._COSTASPROCESALES != value))
+				{
+					this.OnCOSTASPROCESALESChanging(value);
+					this.SendPropertyChanging();
+					this._COSTASPROCESALES = value;
+					this.SendPropertyChanged("COSTASPROCESALES");
+					this.OnCOSTASPROCESALESChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEUDATOTAL", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> DEUDATOTAL
+		{
+			get
+			{
+				return this._DEUDATOTAL;
+			}
+			set
+			{
+				if ((this._DEUDATOTAL != value))
+				{
+					this.OnDEUDATOTALChanging(value);
+					this.SendPropertyChanging();
+					this._DEUDATOTAL = value;
+					this.SendPropertyChanged("DEUDATOTAL");
+					this.OnDEUDATOTALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHAGENERACION_RESRET", DbType="DateTime2 NOT NULL")]
+		public System.DateTime FECHAGENERACION_RESRET
+		{
+			get
+			{
+				return this._FECHAGENERACION_RESRET;
+			}
+			set
+			{
+				if ((this._FECHAGENERACION_RESRET != value))
+				{
+					this.OnFECHAGENERACION_RESRETChanging(value);
+					this.SendPropertyChanging();
+					this._FECHAGENERACION_RESRET = value;
+					this.SendPropertyChanged("FECHAGENERACION_RESRET");
+					this.OnFECHAGENERACION_RESRETChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdCiudadano", DbType="NChar(10)")]
+		public string IdCiudadano
+		{
+			get
+			{
+				return this._IdCiudadano;
+			}
+			set
+			{
+				if ((this._IdCiudadano != value))
+				{
+					this.OnIdCiudadanoChanging(value);
+					this.SendPropertyChanging();
+					this._IdCiudadano = value;
+					this.SendPropertyChanged("IdCiudadano");
+					this.OnIdCiudadanoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INSOLUTO_KARDEX", DbType="Money")]
+		public System.Nullable<decimal> INSOLUTO_KARDEX
+		{
+			get
+			{
+				return this._INSOLUTO_KARDEX;
+			}
+			set
+			{
+				if ((this._INSOLUTO_KARDEX != value))
+				{
+					this.OnINSOLUTO_KARDEXChanging(value);
+					this.SendPropertyChanging();
+					this._INSOLUTO_KARDEX = value;
+					this.SendPropertyChanged("INSOLUTO_KARDEX");
+					this.OnINSOLUTO_KARDEXChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GASADMIN_KARDEX", DbType="Money")]
+		public System.Nullable<decimal> GASADMIN_KARDEX
+		{
+			get
+			{
+				return this._GASADMIN_KARDEX;
+			}
+			set
+			{
+				if ((this._GASADMIN_KARDEX != value))
+				{
+					this.OnGASADMIN_KARDEXChanging(value);
+					this.SendPropertyChanging();
+					this._GASADMIN_KARDEX = value;
+					this.SendPropertyChanged("GASADMIN_KARDEX");
+					this.OnGASADMIN_KARDEXChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MORA_KARDEX", DbType="Money")]
+		public System.Nullable<decimal> MORA_KARDEX
+		{
+			get
+			{
+				return this._MORA_KARDEX;
+			}
+			set
+			{
+				if ((this._MORA_KARDEX != value))
+				{
+					this.OnMORA_KARDEXChanging(value);
+					this.SendPropertyChanging();
+					this._MORA_KARDEX = value;
+					this.SendPropertyChanged("MORA_KARDEX");
+					this.OnMORA_KARDEXChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHAULTIMAACTUALIZACION", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> FECHAULTIMAACTUALIZACION
+		{
+			get
+			{
+				return this._FECHAULTIMAACTUALIZACION;
+			}
+			set
+			{
+				if ((this._FECHAULTIMAACTUALIZACION != value))
+				{
+					this.OnFECHAULTIMAACTUALIZACIONChanging(value);
+					this.SendPropertyChanging();
+					this._FECHAULTIMAACTUALIZACION = value;
+					this.SendPropertyChanged("FECHAULTIMAACTUALIZACION");
+					this.OnFECHAULTIMAACTUALIZACIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESDE", DbType="NVarChar(4)")]
+		public string DESDE
+		{
+			get
+			{
+				return this._DESDE;
+			}
+			set
+			{
+				if ((this._DESDE != value))
+				{
+					this.OnDESDEChanging(value);
+					this.SendPropertyChanging();
+					this._DESDE = value;
+					this.SendPropertyChanged("DESDE");
+					this.OnDESDEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HASTA", DbType="NVarChar(4)")]
+		public string HASTA
+		{
+			get
+			{
+				return this._HASTA;
+			}
+			set
+			{
+				if ((this._HASTA != value))
+				{
+					this.OnHASTAChanging(value);
+					this.SendPropertyChanging();
+					this._HASTA = value;
+					this.SendPropertyChanged("HASTA");
+					this.OnHASTAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL_ACUMULADO", DbType="Decimal(20,2)")]
+		public System.Nullable<decimal> TOTAL_ACUMULADO
+		{
+			get
+			{
+				return this._TOTAL_ACUMULADO;
+			}
+			set
+			{
+				if ((this._TOTAL_ACUMULADO != value))
+				{
+					this.OnTOTAL_ACUMULADOChanging(value);
+					this.SendPropertyChanging();
+					this._TOTAL_ACUMULADO = value;
+					this.SendPropertyChanged("TOTAL_ACUMULADO");
+					this.OnTOTAL_ACUMULADOChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ESTADORD")]
+	public partial class ESTADORD
+	{
+		
+		private string _facodestadord;
+		
+		private string _fadesestado;
+		
+		public ESTADORD()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_facodestadord", DbType="VarChar(1)")]
+		public string facodestadord
+		{
+			get
+			{
+				return this._facodestadord;
+			}
+			set
+			{
+				if ((this._facodestadord != value))
+				{
+					this._facodestadord = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fadesestado", DbType="VarChar(200)")]
+		public string fadesestado
+		{
+			get
+			{
+				return this._fadesestado;
+			}
+			set
+			{
+				if ((this._fadesestado != value))
+				{
+					this._fadesestado = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.REQCOACGEN")]
 	public partial class REQCOACGEN : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3169,692 +3855,6 @@ namespace SISCONVAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.REQCOAC_RESRET")]
-	public partial class REQCOAC_RESRET : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _FNIDRESRET;
-		
-		private string _FANROEXPED;
-		
-		private string _FANRORESOLUCION;
-		
-		private string _FAANIORESOLUCION;
-		
-		private string _FAANIOEXPED;
-		
-		private string _FATIPOVALOR;
-		
-		private int _FNCODAUXILIAR;
-		
-		private System.Nullable<int> _FAEJECUTOR;
-		
-		private string _FAIDCIUDADANO;
-		
-		private string _FAAPELLIDOSYNOMBRES;
-		
-		private string _FADOMFISCAL;
-		
-		private string _faanioinicio;
-		
-		private string _faaniofin;
-		
-		private System.Nullable<decimal> _INSOLUTO_RD;
-		
-		private System.Nullable<decimal> _INTERESES_RD;
-		
-		private System.Nullable<decimal> _GASTOSADMINISTRATIVOS_RD;
-		
-		private decimal _COSTASPROCESALES;
-		
-		private System.Nullable<decimal> _DEUDATOTAL;
-		
-		private System.DateTime _FECHAGENERACION_RESRET;
-		
-		private string _IdCiudadano;
-		
-		private System.Nullable<decimal> _INSOLUTO_KARDEX;
-		
-		private System.Nullable<decimal> _GASADMIN_KARDEX;
-		
-		private System.Nullable<decimal> _MORA_KARDEX;
-		
-		private System.Nullable<System.DateTime> _FECHAULTIMAACTUALIZACION;
-		
-		private string _DESDE;
-		
-		private string _HASTA;
-		
-		private System.Nullable<decimal> _TOTAL_ACUMULADO;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnFNIDRESRETChanging(int value);
-    partial void OnFNIDRESRETChanged();
-    partial void OnFANROEXPEDChanging(string value);
-    partial void OnFANROEXPEDChanged();
-    partial void OnFANRORESOLUCIONChanging(string value);
-    partial void OnFANRORESOLUCIONChanged();
-    partial void OnFAANIORESOLUCIONChanging(string value);
-    partial void OnFAANIORESOLUCIONChanged();
-    partial void OnFAANIOEXPEDChanging(string value);
-    partial void OnFAANIOEXPEDChanged();
-    partial void OnFATIPOVALORChanging(string value);
-    partial void OnFATIPOVALORChanged();
-    partial void OnFNCODAUXILIARChanging(int value);
-    partial void OnFNCODAUXILIARChanged();
-    partial void OnFAEJECUTORChanging(System.Nullable<int> value);
-    partial void OnFAEJECUTORChanged();
-    partial void OnFAIDCIUDADANOChanging(string value);
-    partial void OnFAIDCIUDADANOChanged();
-    partial void OnFAAPELLIDOSYNOMBRESChanging(string value);
-    partial void OnFAAPELLIDOSYNOMBRESChanged();
-    partial void OnFADOMFISCALChanging(string value);
-    partial void OnFADOMFISCALChanged();
-    partial void OnfaanioinicioChanging(string value);
-    partial void OnfaanioinicioChanged();
-    partial void OnfaaniofinChanging(string value);
-    partial void OnfaaniofinChanged();
-    partial void OnINSOLUTO_RDChanging(System.Nullable<decimal> value);
-    partial void OnINSOLUTO_RDChanged();
-    partial void OnINTERESES_RDChanging(System.Nullable<decimal> value);
-    partial void OnINTERESES_RDChanged();
-    partial void OnGASTOSADMINISTRATIVOS_RDChanging(System.Nullable<decimal> value);
-    partial void OnGASTOSADMINISTRATIVOS_RDChanged();
-    partial void OnCOSTASPROCESALESChanging(decimal value);
-    partial void OnCOSTASPROCESALESChanged();
-    partial void OnDEUDATOTALChanging(System.Nullable<decimal> value);
-    partial void OnDEUDATOTALChanged();
-    partial void OnFECHAGENERACION_RESRETChanging(System.DateTime value);
-    partial void OnFECHAGENERACION_RESRETChanged();
-    partial void OnIdCiudadanoChanging(string value);
-    partial void OnIdCiudadanoChanged();
-    partial void OnINSOLUTO_KARDEXChanging(System.Nullable<decimal> value);
-    partial void OnINSOLUTO_KARDEXChanged();
-    partial void OnGASADMIN_KARDEXChanging(System.Nullable<decimal> value);
-    partial void OnGASADMIN_KARDEXChanged();
-    partial void OnMORA_KARDEXChanging(System.Nullable<decimal> value);
-    partial void OnMORA_KARDEXChanged();
-    partial void OnFECHAULTIMAACTUALIZACIONChanging(System.Nullable<System.DateTime> value);
-    partial void OnFECHAULTIMAACTUALIZACIONChanged();
-    partial void OnDESDEChanging(string value);
-    partial void OnDESDEChanged();
-    partial void OnHASTAChanging(string value);
-    partial void OnHASTAChanged();
-    partial void OnTOTAL_ACUMULADOChanging(System.Nullable<decimal> value);
-    partial void OnTOTAL_ACUMULADOChanged();
-    #endregion
-		
-		public REQCOAC_RESRET()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FNIDRESRET", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int FNIDRESRET
-		{
-			get
-			{
-				return this._FNIDRESRET;
-			}
-			set
-			{
-				if ((this._FNIDRESRET != value))
-				{
-					this.OnFNIDRESRETChanging(value);
-					this.SendPropertyChanging();
-					this._FNIDRESRET = value;
-					this.SendPropertyChanged("FNIDRESRET");
-					this.OnFNIDRESRETChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FANROEXPED", DbType="VarChar(4) NOT NULL", CanBeNull=false)]
-		public string FANROEXPED
-		{
-			get
-			{
-				return this._FANROEXPED;
-			}
-			set
-			{
-				if ((this._FANROEXPED != value))
-				{
-					this.OnFANROEXPEDChanging(value);
-					this.SendPropertyChanging();
-					this._FANROEXPED = value;
-					this.SendPropertyChanged("FANROEXPED");
-					this.OnFANROEXPEDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FANRORESOLUCION", DbType="VarChar(4) NOT NULL", CanBeNull=false)]
-		public string FANRORESOLUCION
-		{
-			get
-			{
-				return this._FANRORESOLUCION;
-			}
-			set
-			{
-				if ((this._FANRORESOLUCION != value))
-				{
-					this.OnFANRORESOLUCIONChanging(value);
-					this.SendPropertyChanging();
-					this._FANRORESOLUCION = value;
-					this.SendPropertyChanged("FANRORESOLUCION");
-					this.OnFANRORESOLUCIONChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FAANIORESOLUCION", DbType="VarChar(4)")]
-		public string FAANIORESOLUCION
-		{
-			get
-			{
-				return this._FAANIORESOLUCION;
-			}
-			set
-			{
-				if ((this._FAANIORESOLUCION != value))
-				{
-					this.OnFAANIORESOLUCIONChanging(value);
-					this.SendPropertyChanging();
-					this._FAANIORESOLUCION = value;
-					this.SendPropertyChanged("FAANIORESOLUCION");
-					this.OnFAANIORESOLUCIONChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FAANIOEXPED", DbType="VarChar(4) NOT NULL", CanBeNull=false)]
-		public string FAANIOEXPED
-		{
-			get
-			{
-				return this._FAANIOEXPED;
-			}
-			set
-			{
-				if ((this._FAANIOEXPED != value))
-				{
-					this.OnFAANIOEXPEDChanging(value);
-					this.SendPropertyChanging();
-					this._FAANIOEXPED = value;
-					this.SendPropertyChanged("FAANIOEXPED");
-					this.OnFAANIOEXPEDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FATIPOVALOR", DbType="VarChar(3)")]
-		public string FATIPOVALOR
-		{
-			get
-			{
-				return this._FATIPOVALOR;
-			}
-			set
-			{
-				if ((this._FATIPOVALOR != value))
-				{
-					this.OnFATIPOVALORChanging(value);
-					this.SendPropertyChanging();
-					this._FATIPOVALOR = value;
-					this.SendPropertyChanged("FATIPOVALOR");
-					this.OnFATIPOVALORChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FNCODAUXILIAR", DbType="Int NOT NULL")]
-		public int FNCODAUXILIAR
-		{
-			get
-			{
-				return this._FNCODAUXILIAR;
-			}
-			set
-			{
-				if ((this._FNCODAUXILIAR != value))
-				{
-					this.OnFNCODAUXILIARChanging(value);
-					this.SendPropertyChanging();
-					this._FNCODAUXILIAR = value;
-					this.SendPropertyChanged("FNCODAUXILIAR");
-					this.OnFNCODAUXILIARChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FAEJECUTOR", DbType="Int")]
-		public System.Nullable<int> FAEJECUTOR
-		{
-			get
-			{
-				return this._FAEJECUTOR;
-			}
-			set
-			{
-				if ((this._FAEJECUTOR != value))
-				{
-					this.OnFAEJECUTORChanging(value);
-					this.SendPropertyChanging();
-					this._FAEJECUTOR = value;
-					this.SendPropertyChanged("FAEJECUTOR");
-					this.OnFAEJECUTORChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FAIDCIUDADANO", DbType="VarChar(9) NOT NULL", CanBeNull=false)]
-		public string FAIDCIUDADANO
-		{
-			get
-			{
-				return this._FAIDCIUDADANO;
-			}
-			set
-			{
-				if ((this._FAIDCIUDADANO != value))
-				{
-					this.OnFAIDCIUDADANOChanging(value);
-					this.SendPropertyChanging();
-					this._FAIDCIUDADANO = value;
-					this.SendPropertyChanged("FAIDCIUDADANO");
-					this.OnFAIDCIUDADANOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FAAPELLIDOSYNOMBRES", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string FAAPELLIDOSYNOMBRES
-		{
-			get
-			{
-				return this._FAAPELLIDOSYNOMBRES;
-			}
-			set
-			{
-				if ((this._FAAPELLIDOSYNOMBRES != value))
-				{
-					this.OnFAAPELLIDOSYNOMBRESChanging(value);
-					this.SendPropertyChanging();
-					this._FAAPELLIDOSYNOMBRES = value;
-					this.SendPropertyChanged("FAAPELLIDOSYNOMBRES");
-					this.OnFAAPELLIDOSYNOMBRESChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FADOMFISCAL", DbType="VarChar(500)")]
-		public string FADOMFISCAL
-		{
-			get
-			{
-				return this._FADOMFISCAL;
-			}
-			set
-			{
-				if ((this._FADOMFISCAL != value))
-				{
-					this.OnFADOMFISCALChanging(value);
-					this.SendPropertyChanging();
-					this._FADOMFISCAL = value;
-					this.SendPropertyChanged("FADOMFISCAL");
-					this.OnFADOMFISCALChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_faanioinicio", DbType="VarChar(4)")]
-		public string faanioinicio
-		{
-			get
-			{
-				return this._faanioinicio;
-			}
-			set
-			{
-				if ((this._faanioinicio != value))
-				{
-					this.OnfaanioinicioChanging(value);
-					this.SendPropertyChanging();
-					this._faanioinicio = value;
-					this.SendPropertyChanged("faanioinicio");
-					this.OnfaanioinicioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_faaniofin", DbType="VarChar(4)")]
-		public string faaniofin
-		{
-			get
-			{
-				return this._faaniofin;
-			}
-			set
-			{
-				if ((this._faaniofin != value))
-				{
-					this.OnfaaniofinChanging(value);
-					this.SendPropertyChanging();
-					this._faaniofin = value;
-					this.SendPropertyChanged("faaniofin");
-					this.OnfaaniofinChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INSOLUTO_RD", DbType="Decimal(12,2)")]
-		public System.Nullable<decimal> INSOLUTO_RD
-		{
-			get
-			{
-				return this._INSOLUTO_RD;
-			}
-			set
-			{
-				if ((this._INSOLUTO_RD != value))
-				{
-					this.OnINSOLUTO_RDChanging(value);
-					this.SendPropertyChanging();
-					this._INSOLUTO_RD = value;
-					this.SendPropertyChanged("INSOLUTO_RD");
-					this.OnINSOLUTO_RDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INTERESES_RD", DbType="Decimal(12,2)")]
-		public System.Nullable<decimal> INTERESES_RD
-		{
-			get
-			{
-				return this._INTERESES_RD;
-			}
-			set
-			{
-				if ((this._INTERESES_RD != value))
-				{
-					this.OnINTERESES_RDChanging(value);
-					this.SendPropertyChanging();
-					this._INTERESES_RD = value;
-					this.SendPropertyChanged("INTERESES_RD");
-					this.OnINTERESES_RDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GASTOSADMINISTRATIVOS_RD", DbType="Decimal(12,2)")]
-		public System.Nullable<decimal> GASTOSADMINISTRATIVOS_RD
-		{
-			get
-			{
-				return this._GASTOSADMINISTRATIVOS_RD;
-			}
-			set
-			{
-				if ((this._GASTOSADMINISTRATIVOS_RD != value))
-				{
-					this.OnGASTOSADMINISTRATIVOS_RDChanging(value);
-					this.SendPropertyChanging();
-					this._GASTOSADMINISTRATIVOS_RD = value;
-					this.SendPropertyChanged("GASTOSADMINISTRATIVOS_RD");
-					this.OnGASTOSADMINISTRATIVOS_RDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COSTASPROCESALES", DbType="Decimal(12,2) NOT NULL")]
-		public decimal COSTASPROCESALES
-		{
-			get
-			{
-				return this._COSTASPROCESALES;
-			}
-			set
-			{
-				if ((this._COSTASPROCESALES != value))
-				{
-					this.OnCOSTASPROCESALESChanging(value);
-					this.SendPropertyChanging();
-					this._COSTASPROCESALES = value;
-					this.SendPropertyChanged("COSTASPROCESALES");
-					this.OnCOSTASPROCESALESChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEUDATOTAL", DbType="Decimal(15,2)")]
-		public System.Nullable<decimal> DEUDATOTAL
-		{
-			get
-			{
-				return this._DEUDATOTAL;
-			}
-			set
-			{
-				if ((this._DEUDATOTAL != value))
-				{
-					this.OnDEUDATOTALChanging(value);
-					this.SendPropertyChanging();
-					this._DEUDATOTAL = value;
-					this.SendPropertyChanged("DEUDATOTAL");
-					this.OnDEUDATOTALChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHAGENERACION_RESRET", DbType="DateTime2 NOT NULL")]
-		public System.DateTime FECHAGENERACION_RESRET
-		{
-			get
-			{
-				return this._FECHAGENERACION_RESRET;
-			}
-			set
-			{
-				if ((this._FECHAGENERACION_RESRET != value))
-				{
-					this.OnFECHAGENERACION_RESRETChanging(value);
-					this.SendPropertyChanging();
-					this._FECHAGENERACION_RESRET = value;
-					this.SendPropertyChanged("FECHAGENERACION_RESRET");
-					this.OnFECHAGENERACION_RESRETChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdCiudadano", DbType="NChar(10)")]
-		public string IdCiudadano
-		{
-			get
-			{
-				return this._IdCiudadano;
-			}
-			set
-			{
-				if ((this._IdCiudadano != value))
-				{
-					this.OnIdCiudadanoChanging(value);
-					this.SendPropertyChanging();
-					this._IdCiudadano = value;
-					this.SendPropertyChanged("IdCiudadano");
-					this.OnIdCiudadanoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INSOLUTO_KARDEX", DbType="Money")]
-		public System.Nullable<decimal> INSOLUTO_KARDEX
-		{
-			get
-			{
-				return this._INSOLUTO_KARDEX;
-			}
-			set
-			{
-				if ((this._INSOLUTO_KARDEX != value))
-				{
-					this.OnINSOLUTO_KARDEXChanging(value);
-					this.SendPropertyChanging();
-					this._INSOLUTO_KARDEX = value;
-					this.SendPropertyChanged("INSOLUTO_KARDEX");
-					this.OnINSOLUTO_KARDEXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GASADMIN_KARDEX", DbType="Money")]
-		public System.Nullable<decimal> GASADMIN_KARDEX
-		{
-			get
-			{
-				return this._GASADMIN_KARDEX;
-			}
-			set
-			{
-				if ((this._GASADMIN_KARDEX != value))
-				{
-					this.OnGASADMIN_KARDEXChanging(value);
-					this.SendPropertyChanging();
-					this._GASADMIN_KARDEX = value;
-					this.SendPropertyChanged("GASADMIN_KARDEX");
-					this.OnGASADMIN_KARDEXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MORA_KARDEX", DbType="Money")]
-		public System.Nullable<decimal> MORA_KARDEX
-		{
-			get
-			{
-				return this._MORA_KARDEX;
-			}
-			set
-			{
-				if ((this._MORA_KARDEX != value))
-				{
-					this.OnMORA_KARDEXChanging(value);
-					this.SendPropertyChanging();
-					this._MORA_KARDEX = value;
-					this.SendPropertyChanged("MORA_KARDEX");
-					this.OnMORA_KARDEXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHAULTIMAACTUALIZACION", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> FECHAULTIMAACTUALIZACION
-		{
-			get
-			{
-				return this._FECHAULTIMAACTUALIZACION;
-			}
-			set
-			{
-				if ((this._FECHAULTIMAACTUALIZACION != value))
-				{
-					this.OnFECHAULTIMAACTUALIZACIONChanging(value);
-					this.SendPropertyChanging();
-					this._FECHAULTIMAACTUALIZACION = value;
-					this.SendPropertyChanged("FECHAULTIMAACTUALIZACION");
-					this.OnFECHAULTIMAACTUALIZACIONChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESDE", DbType="NVarChar(4)")]
-		public string DESDE
-		{
-			get
-			{
-				return this._DESDE;
-			}
-			set
-			{
-				if ((this._DESDE != value))
-				{
-					this.OnDESDEChanging(value);
-					this.SendPropertyChanging();
-					this._DESDE = value;
-					this.SendPropertyChanged("DESDE");
-					this.OnDESDEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HASTA", DbType="NVarChar(4)")]
-		public string HASTA
-		{
-			get
-			{
-				return this._HASTA;
-			}
-			set
-			{
-				if ((this._HASTA != value))
-				{
-					this.OnHASTAChanging(value);
-					this.SendPropertyChanging();
-					this._HASTA = value;
-					this.SendPropertyChanged("HASTA");
-					this.OnHASTAChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL_ACUMULADO", DbType="Decimal(20,2)")]
-		public System.Nullable<decimal> TOTAL_ACUMULADO
-		{
-			get
-			{
-				return this._TOTAL_ACUMULADO;
-			}
-			set
-			{
-				if ((this._TOTAL_ACUMULADO != value))
-				{
-					this.OnTOTAL_ACUMULADOChanging(value);
-					this.SendPropertyChanging();
-					this._TOTAL_ACUMULADO = value;
-					this.SendPropertyChanged("TOTAL_ACUMULADO");
-					this.OnTOTAL_ACUMULADOChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	public partial class PA_CONTROLDEUDA_GENERARVALOR_INDIVIDUAL_PREVIEWResult
 	{
 		
@@ -4545,230 +4545,6 @@ namespace SISCONVAL
 		}
 	}
 	
-	public partial class PA_ESTADOCUETA_DETALLESResult
-	{
-		
-		private string _Id;
-		
-		private string _Nombre;
-		
-		private string _DIRECCION;
-		
-		private string _NUMERO;
-		
-		private string _DESDE;
-		
-		private string _HASTA;
-		
-		private System.Nullable<int> _CANTIDAD_AÑOS;
-		
-		private System.Nullable<decimal> _PREDIAL_INSOLUTO;
-		
-		private System.Nullable<decimal> _PREDIAL_GASADMIN;
-		
-		private System.Nullable<decimal> _PREDIAL_MORA;
-		
-		private System.Nullable<decimal> _PREDIAL_TOTAL;
-		
-		private System.Nullable<decimal> _SEGURIDAD;
-		
-		public PA_ESTADOCUETA_DETALLESResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="NChar(9) NOT NULL", CanBeNull=false)]
-		public string Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this._Id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="NVarChar(101)")]
-		public string Nombre
-		{
-			get
-			{
-				return this._Nombre;
-			}
-			set
-			{
-				if ((this._Nombre != value))
-				{
-					this._Nombre = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIRECCION", DbType="NVarChar(80)")]
-		public string DIRECCION
-		{
-			get
-			{
-				return this._DIRECCION;
-			}
-			set
-			{
-				if ((this._DIRECCION != value))
-				{
-					this._DIRECCION = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUMERO", DbType="NVarChar(50)")]
-		public string NUMERO
-		{
-			get
-			{
-				return this._NUMERO;
-			}
-			set
-			{
-				if ((this._NUMERO != value))
-				{
-					this._NUMERO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESDE", DbType="NVarChar(4)")]
-		public string DESDE
-		{
-			get
-			{
-				return this._DESDE;
-			}
-			set
-			{
-				if ((this._DESDE != value))
-				{
-					this._DESDE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HASTA", DbType="NVarChar(4)")]
-		public string HASTA
-		{
-			get
-			{
-				return this._HASTA;
-			}
-			set
-			{
-				if ((this._HASTA != value))
-				{
-					this._HASTA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CANTIDAD_AÑOS", DbType="Int")]
-		public System.Nullable<int> CANTIDAD_AÑOS
-		{
-			get
-			{
-				return this._CANTIDAD_AÑOS;
-			}
-			set
-			{
-				if ((this._CANTIDAD_AÑOS != value))
-				{
-					this._CANTIDAD_AÑOS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PREDIAL_INSOLUTO", DbType="Money")]
-		public System.Nullable<decimal> PREDIAL_INSOLUTO
-		{
-			get
-			{
-				return this._PREDIAL_INSOLUTO;
-			}
-			set
-			{
-				if ((this._PREDIAL_INSOLUTO != value))
-				{
-					this._PREDIAL_INSOLUTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PREDIAL_GASADMIN", DbType="Money")]
-		public System.Nullable<decimal> PREDIAL_GASADMIN
-		{
-			get
-			{
-				return this._PREDIAL_GASADMIN;
-			}
-			set
-			{
-				if ((this._PREDIAL_GASADMIN != value))
-				{
-					this._PREDIAL_GASADMIN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PREDIAL_MORA", DbType="Money")]
-		public System.Nullable<decimal> PREDIAL_MORA
-		{
-			get
-			{
-				return this._PREDIAL_MORA;
-			}
-			set
-			{
-				if ((this._PREDIAL_MORA != value))
-				{
-					this._PREDIAL_MORA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PREDIAL_TOTAL", DbType="Money")]
-		public System.Nullable<decimal> PREDIAL_TOTAL
-		{
-			get
-			{
-				return this._PREDIAL_TOTAL;
-			}
-			set
-			{
-				if ((this._PREDIAL_TOTAL != value))
-				{
-					this._PREDIAL_TOTAL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEGURIDAD", DbType="Money")]
-		public System.Nullable<decimal> SEGURIDAD
-		{
-			get
-			{
-				return this._SEGURIDAD;
-			}
-			set
-			{
-				if ((this._SEGURIDAD != value))
-				{
-					this._SEGURIDAD = value;
-				}
-			}
-		}
-	}
-	
 	public partial class PA_CONTROLDEUDA_DATOSVALOR_MASIVResult
 	{
 		
@@ -5168,32 +4944,6 @@ namespace SISCONVAL
 				if ((this._FAOPERADOR != value))
 				{
 					this._FAOPERADOR = value;
-				}
-			}
-		}
-	}
-	
-	public partial class PA_COAC_COSTASPROCESALESResult
-	{
-		
-		private System.Nullable<decimal> _Saldo;
-		
-		public PA_COAC_COSTASPROCESALESResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Saldo", DbType="Money")]
-		public System.Nullable<decimal> Saldo
-		{
-			get
-			{
-				return this._Saldo;
-			}
-			set
-			{
-				if ((this._Saldo != value))
-				{
-					this._Saldo = value;
 				}
 			}
 		}
@@ -5840,6 +5590,256 @@ namespace SISCONVAL
 				if ((this._TOTAL_ACUMULADO != value))
 				{
 					this._TOTAL_ACUMULADO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class PA_COAC_COSTASPROCESALESResult
+	{
+		
+		private System.Nullable<decimal> _Saldo;
+		
+		public PA_COAC_COSTASPROCESALESResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Saldo", DbType="Money")]
+		public System.Nullable<decimal> Saldo
+		{
+			get
+			{
+				return this._Saldo;
+			}
+			set
+			{
+				if ((this._Saldo != value))
+				{
+					this._Saldo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class PA_ESTADOCUETA_DETALLESResult
+	{
+		
+		private string _Id;
+		
+		private string _Nombre;
+		
+		private string _DIRECCION;
+		
+		private string _NUMERO;
+		
+		private string _DESDE;
+		
+		private string _HASTA;
+		
+		private System.Nullable<int> _CANTIDAD_AÑOS;
+		
+		private System.Nullable<decimal> _PREDIAL_INSOLUTO;
+		
+		private System.Nullable<decimal> _PREDIAL_GASADMIN;
+		
+		private System.Nullable<decimal> _PREDIAL_MORA;
+		
+		private System.Nullable<decimal> _PREDIAL_TOTAL;
+		
+		private System.Nullable<decimal> _SEGURIDAD;
+		
+		public PA_ESTADOCUETA_DETALLESResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="NChar(9) NOT NULL", CanBeNull=false)]
+		public string Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="NVarChar(101)")]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIRECCION", DbType="NVarChar(80)")]
+		public string DIRECCION
+		{
+			get
+			{
+				return this._DIRECCION;
+			}
+			set
+			{
+				if ((this._DIRECCION != value))
+				{
+					this._DIRECCION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUMERO", DbType="NVarChar(50)")]
+		public string NUMERO
+		{
+			get
+			{
+				return this._NUMERO;
+			}
+			set
+			{
+				if ((this._NUMERO != value))
+				{
+					this._NUMERO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESDE", DbType="NVarChar(4)")]
+		public string DESDE
+		{
+			get
+			{
+				return this._DESDE;
+			}
+			set
+			{
+				if ((this._DESDE != value))
+				{
+					this._DESDE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HASTA", DbType="NVarChar(4)")]
+		public string HASTA
+		{
+			get
+			{
+				return this._HASTA;
+			}
+			set
+			{
+				if ((this._HASTA != value))
+				{
+					this._HASTA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CANTIDAD_AÑOS", DbType="Int")]
+		public System.Nullable<int> CANTIDAD_AÑOS
+		{
+			get
+			{
+				return this._CANTIDAD_AÑOS;
+			}
+			set
+			{
+				if ((this._CANTIDAD_AÑOS != value))
+				{
+					this._CANTIDAD_AÑOS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PREDIAL_INSOLUTO", DbType="Money")]
+		public System.Nullable<decimal> PREDIAL_INSOLUTO
+		{
+			get
+			{
+				return this._PREDIAL_INSOLUTO;
+			}
+			set
+			{
+				if ((this._PREDIAL_INSOLUTO != value))
+				{
+					this._PREDIAL_INSOLUTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PREDIAL_GASADMIN", DbType="Money")]
+		public System.Nullable<decimal> PREDIAL_GASADMIN
+		{
+			get
+			{
+				return this._PREDIAL_GASADMIN;
+			}
+			set
+			{
+				if ((this._PREDIAL_GASADMIN != value))
+				{
+					this._PREDIAL_GASADMIN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PREDIAL_MORA", DbType="Money")]
+		public System.Nullable<decimal> PREDIAL_MORA
+		{
+			get
+			{
+				return this._PREDIAL_MORA;
+			}
+			set
+			{
+				if ((this._PREDIAL_MORA != value))
+				{
+					this._PREDIAL_MORA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PREDIAL_TOTAL", DbType="Money")]
+		public System.Nullable<decimal> PREDIAL_TOTAL
+		{
+			get
+			{
+				return this._PREDIAL_TOTAL;
+			}
+			set
+			{
+				if ((this._PREDIAL_TOTAL != value))
+				{
+					this._PREDIAL_TOTAL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEGURIDAD", DbType="Money")]
+		public System.Nullable<decimal> SEGURIDAD
+		{
+			get
+			{
+				return this._SEGURIDAD;
+			}
+			set
+			{
+				if ((this._SEGURIDAD != value))
+				{
+					this._SEGURIDAD = value;
 				}
 			}
 		}
