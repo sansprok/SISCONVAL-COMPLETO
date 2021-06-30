@@ -16,7 +16,9 @@ namespace SISCONVAL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal());
+            // Application.Run(new frmPrincipal());
+            Application.Run(new frmReporteRD_Masiv(2021, 697,697));
+           // Application.Run(new frmPlantillaResolucionMasiva());
 
             //Application.Run(new frmEstadoActualDeuda());
 

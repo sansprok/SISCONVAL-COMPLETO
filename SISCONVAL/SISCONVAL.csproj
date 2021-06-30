@@ -12,7 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Miki\Documents\WANCHAQ\SISTEMA DE CONTROL  VALORES\INSTALADORES\SETUP07062019-paracoac 32x\</PublishUrl>
+    <PublishUrl>D:\INSTALADORES\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -111,6 +111,12 @@
     </Compile>
     <Compile Include="frmEstadoActual.Designer.cs">
       <DependentUpon>frmEstadoActual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlantillaResolucionMasiva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlantillaResolucionMasiva.Designer.cs">
+      <DependentUpon>frmPlantillaResolucionMasiva.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReporteRD_Masiv.cs">
       <SubType>Form</SubType>
@@ -311,8 +317,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Valores.dbml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormatoResolucionDeterminacion - Copia.rdlc" />
     <EmbeddedResource Include="frmEstadoActual.resx">
       <DependentUpon>frmEstadoActual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlantillaResolucionMasiva.resx">
+      <DependentUpon>frmPlantillaResolucionMasiva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteRD_Masiv.resx">
       <DependentUpon>frmReporteRD_Masiv.cs</DependentUpon>
@@ -321,6 +331,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportEstadoCuentaMasivo - Copia-NOTIFICACION PRE COAC 2019.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportResolucionMasivaPlantilla.rdlc" />
     <EmbeddedResource Include="ReportRD_Masiv.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportRD_Masiv.cs</LastGenOutput>

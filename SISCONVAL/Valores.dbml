@@ -450,4 +450,19 @@
       <Column Name="SEGURIDAD" Type="System.Decimal" DbType="Money" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.PA_ESTADOCUENTA_TABLADEUDA" Method="PA_ESTADOCUENTA_TABLADEUDA">
+    <Parameter Name="FAIDCIUDADANO" Parameter="fAIDCIUDADANO" Type="System.String" DbType="VarChar(9)" />
+    <Parameter Name="FAANIODESDE" Parameter="fAANIODESDE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FAANIOHASTA" Parameter="fAANIOHASTA" Type="System.Int32" DbType="Int" />
+    <ElementType Name="PA_ESTADOCUENTA_TABLADEUDAResult">
+      <Column Name="anio" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="IdCiudadano" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GENERADO" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PAGADO" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="SALDO" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GASADMINGENERADO" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GASADMINPAGADO" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GASADMINPENDIENTE" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

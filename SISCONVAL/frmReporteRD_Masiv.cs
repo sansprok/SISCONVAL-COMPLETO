@@ -16,7 +16,7 @@ namespace SISCONVAL
         int pFAANIORESOLUCION;
         int pFANRORESOLUCION_INI;
         int pFANRORESOLUCION_FIN;
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=USUARIO-4HQE76I\SSQLMDWPMSER06;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=wanchaqsql-2013");
+        SqlConnection sqlcon = new SqlConnection(@"Data Source=MDWSERVER\SQLMDW28;Initial Catalog=AUXWANCHAQ;User ID=sa;Password=wanchaqsql-2013");
         public frmReporteRD_Masiv(int FAANIORESOLUCION, int FNNRORESOLUCION_INI, int FNNRORESOLUCION_FIN)
         {
             InitializeComponent();

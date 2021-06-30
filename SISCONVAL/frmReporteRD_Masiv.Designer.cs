@@ -51,6 +51,7 @@
             this.Controls.Add(this.crvREPORTE_RD_MASIV);
             this.Name = "frmReporteRD_Masiv";
             this.Text = "frmReporteRD_Masiv";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmReporteRD_Masiv_Load);
             this.ResumeLayout(false);
 

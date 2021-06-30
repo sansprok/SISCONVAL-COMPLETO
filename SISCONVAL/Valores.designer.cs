@@ -281,6 +281,13 @@ namespace SISCONVAL
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fADIRECCION);
 			return ((ISingleResult<PA_ESTADOCUETA_DETALLESResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.PA_ESTADOCUENTA_TABLADEUDA")]
+		public ISingleResult<PA_ESTADOCUENTA_TABLADEUDAResult> PA_ESTADOCUENTA_TABLADEUDA([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FAIDCIUDADANO", DbType="VarChar(9)")] string fAIDCIUDADANO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FAANIODESDE", DbType="Int")] System.Nullable<int> fAANIODESDE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FAANIOHASTA", DbType="Int")] System.Nullable<int> fAANIOHASTA)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fAIDCIUDADANO, fAANIODESDE, fAANIOHASTA);
+			return ((ISingleResult<PA_ESTADOCUENTA_TABLADEUDAResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NOTIFICADOR")]
@@ -5840,6 +5847,158 @@ namespace SISCONVAL
 				if ((this._SEGURIDAD != value))
 				{
 					this._SEGURIDAD = value;
+				}
+			}
+		}
+	}
+	
+	public partial class PA_ESTADOCUENTA_TABLADEUDAResult
+	{
+		
+		private string _anio;
+		
+		private string _IdCiudadano;
+		
+		private System.Nullable<decimal> _GENERADO;
+		
+		private System.Nullable<decimal> _PAGADO;
+		
+		private System.Nullable<decimal> _SALDO;
+		
+		private System.Nullable<decimal> _GASADMINGENERADO;
+		
+		private System.Nullable<decimal> _GASADMINPAGADO;
+		
+		private System.Nullable<decimal> _GASADMINPENDIENTE;
+		
+		public PA_ESTADOCUENTA_TABLADEUDAResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_anio", DbType="NVarChar(4)")]
+		public string anio
+		{
+			get
+			{
+				return this._anio;
+			}
+			set
+			{
+				if ((this._anio != value))
+				{
+					this._anio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdCiudadano", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string IdCiudadano
+		{
+			get
+			{
+				return this._IdCiudadano;
+			}
+			set
+			{
+				if ((this._IdCiudadano != value))
+				{
+					this._IdCiudadano = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GENERADO", DbType="Money")]
+		public System.Nullable<decimal> GENERADO
+		{
+			get
+			{
+				return this._GENERADO;
+			}
+			set
+			{
+				if ((this._GENERADO != value))
+				{
+					this._GENERADO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PAGADO", DbType="Money")]
+		public System.Nullable<decimal> PAGADO
+		{
+			get
+			{
+				return this._PAGADO;
+			}
+			set
+			{
+				if ((this._PAGADO != value))
+				{
+					this._PAGADO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SALDO", DbType="Money")]
+		public System.Nullable<decimal> SALDO
+		{
+			get
+			{
+				return this._SALDO;
+			}
+			set
+			{
+				if ((this._SALDO != value))
+				{
+					this._SALDO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GASADMINGENERADO", DbType="Money")]
+		public System.Nullable<decimal> GASADMINGENERADO
+		{
+			get
+			{
+				return this._GASADMINGENERADO;
+			}
+			set
+			{
+				if ((this._GASADMINGENERADO != value))
+				{
+					this._GASADMINGENERADO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GASADMINPAGADO", DbType="Money")]
+		public System.Nullable<decimal> GASADMINPAGADO
+		{
+			get
+			{
+				return this._GASADMINPAGADO;
+			}
+			set
+			{
+				if ((this._GASADMINPAGADO != value))
+				{
+					this._GASADMINPAGADO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GASADMINPENDIENTE", DbType="Money")]
+		public System.Nullable<decimal> GASADMINPENDIENTE
+		{
+			get
+			{
+				return this._GASADMINPENDIENTE;
+			}
+			set
+			{
+				if ((this._GASADMINPENDIENTE != value))
+				{
+					this._GASADMINPENDIENTE = value;
 				}
 			}
 		}

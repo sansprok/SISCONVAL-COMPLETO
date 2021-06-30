@@ -26,6 +26,8 @@ namespace SISCONVAL
             dgvExpedientesCoac.ReadOnly = true;
             dgvExpedientesCoac.AllowUserToAddRows = false;
             dgvExpedientesCoac.BackgroundColor = Color.White;
+            dgvDetallesRD.BackgroundColor = Color.White;
+            dgvSituacionActual.BackgroundColor = Color.White;
             dgvExpedientesCoac.RowHeadersVisible = false;
             dgvExpedientesCoac.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -95,22 +97,37 @@ namespace SISCONVAL
                     cmbExpedienteAuxiliar.SelectedValue = expediente.FNCODAUXILIAR;
                     cmbExpedienteNotificador.SelectedValue = expediente.FNCODNOTIFICADOR;
                 }*/
-                if (txtExpedienteIdCiudadano.Text.Length >= 9)
+                
                 {
-                    dgvExpedientesCoac.DataSource = from R in BD.REQCOACGEN where R.FAIDCIUDADANO == txtExpedienteIdCiudadano.Text && R.FATIPOVALOR == (rdbRD.Checked?"RD":"OP") select new { R.FAANIOEXPED, R.FANROEXPED, R.FAANIORESOLUCION, R.FANRORESOLUCION, R.FAIDCIUDADANO, R.FAAPELLIDOSYNOMBRES, R.FAANIOINICIO, R.FAANIOFIN, R.FAREQCALIFICA, R.FNIMPCOACT, R.FNCOSPROCE, R.FADOMFISCAL };
-                    var expediente = (from R in BD.REQCOACGEN where R.FAIDCIUDADANO == txtExpedienteIdCiudadano.Text && R.FATIPOVALOR == (rdbRD.Checked ? "RD" : "OP") select R).First();
-                    lblExpFechaEnvio.Text = expediente.FDFECENVIO.ToString();
-                    txtExpedienteNroReso.Text = expediente.FANRORESOLUCION;
-                    txtExpedienteNro.Text = expediente.FANROEXPED;
-                    txtExpedienteAnio.Text = expediente.FAANIOEXPED;
-                    txtAnioValor.Text = expediente.FAANIORESOLUCION;
-                    cmbExpedienteCalifica.Text = (from C in BD.CALIFICACION where C.FACODCALIFI == expediente.FAREQCALIFICA select C.FADESCALIFI).First().ToString();
-                    dtpExpedienteFechaNotificacion.Text = expediente.FDFECNOTIF.ToString();
-                    txtExpObservacion.Text = expediente.FAOBSERVACION;
-                    cmbExpedienteAuxiliar.SelectedValue = expediente.FNCODAUXILIAR;
-                    cmbExpedienteNotificador.SelectedValue = expediente.FNCODNOTIFICADOR;
-                    dgvExpedientesCoac.ClearSelection();
-                  //  PintarGrid_EstadoCuentaIP(txtExpedienteIdCiudadano.Text);
+
+                    //if ((from V in BD.VALORESGEN where V.FAIDCIUDADANO == txtExpedienteIdCiudadano.Text select V).Count() == 1)
+                    if (txtExpedienteIdCiudadano.Text.Length >= 9)
+                    {
+                        dgvExpedientesCoac.DataSource = from R in BD.REQCOACGEN where R.FAIDCIUDADANO == txtExpedienteIdCiudadano.Text && R.FATIPOVALOR == (rdbRD.Checked ? "RD" : "OP") select new { R.FAANIOEXPED, R.FANROEXPED, R.FAANIORESOLUCION, R.FANRORESOLUCION, R.FAIDCIUDADANO, R.FAAPELLIDOSYNOMBRES, R.FAANIOINICIO, R.FAANIOFIN, R.FAREQCALIFICA, R.FNIMPCOACT, R.FNCOSPROCE, R.FADOMFISCAL };
+
+                        var expediente = (from R in BD.REQCOACGEN where R.FAIDCIUDADANO == txtExpedienteIdCiudadano.Text && R.FATIPOVALOR == (rdbRD.Checked ? "RD" : "OP") select R).First();
+                        lblExpFechaEnvio.Text = expediente.FDFECENVIO.ToString();
+                        txtExpedienteNroReso.Text = expediente.FANRORESOLUCION;
+                        txtExpedienteNro.Text = expediente.FANROEXPED;
+                        txtExpedienteAnio.Text = expediente.FAANIOEXPED;
+                        txtAnioValor.Text = expediente.FAANIORESOLUCION;
+                        cmbExpedienteCalifica.Text = (from C in BD.CALIFICACION where C.FACODCALIFI == expediente.FAREQCALIFICA select C.FADESCALIFI).First().ToString();
+                        dtpExpedienteFechaNotificacion.Text = expediente.FDFECNOTIF.ToString();
+                        txtExpObservacion.Text = expediente.FAOBSERVACION;
+                        cmbExpedienteAuxiliar.SelectedValue = expediente.FNCODAUXILIAR;
+                        cmbExpedienteNotificador.SelectedValue = expediente.FNCODNOTIFICADOR;
+                        dgvExpedientesCoac.ClearSelection();
+                        //  PintarGrid_EstadoCuentaIP(txtExpedienteIdCiudadano.Text);
+
+                    }
+                   /* else
+                    {
+                        txtExpedienteAnio.Text = dgvExpedientesCoac.Rows[0].Cells["FAANIOEXPED"].Value.ToString();
+                        txtAnioValor.Text = dgvExpedientesCoac.Rows[0].Cells["FAANIORESOLUCION"].Value.ToString();
+                        txtExpedienteNro.Text = dgvExpedientesCoac.Rows[0].Cells["FANROEXPED"].Value.ToString();
+                        txtExpedienteNroReso.Text = dgvExpedientesCoac.Rows[0].Cells["FANRORESOLUCION"].Value.ToString();
+                    }*/
+
                 }
             }
             catch (Exception)
@@ -535,7 +552,7 @@ namespace SISCONVAL
             //    //}
             //}
             //pintarGridCoac();
-
+            PintarGrid_EstadoCuentaIP(txtExpedienteIdCiudadano.Text);
         }
         public void pintarGridCoac()
         {
@@ -611,12 +628,21 @@ namespace SISCONVAL
             }
             dgvExpedientesCoac.ClearSelection();
         }
+        public void llenarDetallesEstadoActual()
+        {
+            dgvDetallesRD.DataSource = from D in BD.VALORESDET where D.FAIDCIUDADANO == txtExpedienteIdCiudadano.Text && D.FAANIORESOLUCION == txtAnioValor.Text && D.FNNRORESOLUCION == int.Parse(txtExpedienteNroReso.Text) select new { D.FAANIOTRIBU, D.FNBASEIMPFISC, D.FNIMPPENDIENTE, D.FNMORA, D.FNGASADMIN, D.FNTOTALRD, D.FAESTADORD };
+            int DESDE = int.Parse(dgvExpedientesCoac.Rows[dgvExpedientesCoac.CurrentCell.RowIndex].Cells["FAANIOINICIO"].Value.ToString());
+            int HASTA = int.Parse(dgvExpedientesCoac.Rows[dgvExpedientesCoac.CurrentCell.RowIndex].Cells["FAANIOFIN"].Value.ToString());
+            dgvSituacionActual.DataSource = BD.PA_ESTADOCUENTA_TABLADEUDA(txtExpedienteIdCiudadano.Text, DESDE, HASTA);
+        }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             try
             {
-                dgvExpedientesCoac.DataSource = from V in BD.REQCOACGEN where V.FANRORESOLUCION == txtExpedienteNroReso.Text && V.FAANIOEXPED == txtExpedienteAnio.Text && V.FATIPOVALOR == (rdbRD.Checked ? "RD" : "OP") select new { V.FAANIOEXPED, V.FANROEXPED, V.FAANIORESOLUCION, V.FANRORESOLUCION, FAIDCIUDADANO = V.FAIDCIUDADANO, V.FAAPELLIDOSYNOMBRES, V.FAANIOINICIO, V.FAANIOFIN, V.FAREQCALIFICA, V.FNIMPCOACT, V.FNCOSPROCE, V.FADOMFISCAL };
+                
+                //dgvExpedientesCoac.DataSource = from V in BD.REQCOACGEN where V.FANRORESOLUCION == txtExpedienteNroReso.Text && V.FAANIOEXPED == txtExpedienteAnio.Text && V.FATIPOVALOR == (rdbRD.Checked ? "RD" : "OP") select new { V.FAANIOEXPED, V.FANROEXPED, V.FAANIORESOLUCION, V.FANRORESOLUCION, FAIDCIUDADANO = V.FAIDCIUDADANO, V.FAAPELLIDOSYNOMBRES, V.FAANIOINICIO, V.FAANIOFIN, V.FAREQCALIFICA, V.FNIMPCOACT, V.FNCOSPROCE, V.FADOMFISCAL };
+                dgvExpedientesCoac.DataSource = from V in BD.REQCOACGEN where V.FAIDCIUDADANO==txtExpedienteIdCiudadano.Text && V.FATIPOVALOR == (rdbRD.Checked ? "RD" : "OP") select new { V.FAANIOEXPED, V.FANROEXPED, V.FAANIORESOLUCION, V.FANRORESOLUCION, FAIDCIUDADANO = V.FAIDCIUDADANO, V.FAAPELLIDOSYNOMBRES, V.FAANIOINICIO, V.FAANIOFIN, V.FAREQCALIFICA, V.FNIMPCOACT, V.FNCOSPROCE, V.FADOMFISCAL };
                 //if (dgvExpedientesCoac.Rows.Count==0)
                 //{
                 //    MessageBox.Show("VALOR PENDIENTE DE TRANSFERENCIA A EJECUCIÓN COACTIVA", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -668,6 +694,7 @@ namespace SISCONVAL
                         
                     }
                     PintarGrid_EstadoCuentaIP(txtExpedienteIdCiudadano.Text);
+                    llenarDetallesEstadoActual();
 
                 }
                 else
@@ -679,6 +706,12 @@ namespace SISCONVAL
                     }
                     else
                     {
+
+                        txtExpedienteAnio.Text = dgvExpedientesCoac.Rows[0].Cells["FAANIOEXPED"].Value.ToString();
+                        txtAnioValor.Text = dgvExpedientesCoac.Rows[0].Cells["FAANIORESOLUCION"].Value.ToString();
+                        txtExpedienteNro.Text = dgvExpedientesCoac.Rows[0].Cells["FANROEXPED"].Value.ToString();
+                        txtExpedienteNroReso.Text = dgvExpedientesCoac.Rows[0].Cells["FANRORESOLUCION"].Value.ToString();
+                        // dataGridView1.Rows[0].Selected = true;
                         MessageBox.Show("El codigo tiene mas de un valor");
                     }
                     
@@ -703,6 +736,61 @@ namespace SISCONVAL
         private void btnExpedienteBuscarEjecutor_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvExpedientesCoac_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvExpedientesCoac.Rows.Count>1)
+            {
+                txtExpedienteIdCiudadano.Text = dgvExpedientesCoac.Rows[dgvExpedientesCoac.CurrentCell.RowIndex].Cells["FAIDCIUDADANO"].Value.ToString();
+                txtExpedienteNroReso.Text = dgvExpedientesCoac.Rows[dgvExpedientesCoac.CurrentCell.RowIndex].Cells["FANRORESOLUCION"].Value.ToString(); ;
+                var Resolucion = (from R in BD.REQCOACGEN where R.FAIDCIUDADANO == txtExpedienteIdCiudadano.Text && R.FANRORESOLUCION == txtExpedienteNroReso.Text && R.FATIPOVALOR == (rdbRD.Checked ? "RD" : "OP") select R).First();
+                
+                dtpExpedienteFechaNotificacion.Value = Resolucion.FDFECNOTIF.Value;
+
+                txtExpedienteAnio.Text = Resolucion.FAANIOEXPED;
+                txtAnioValor.Text = Resolucion.FAANIORESOLUCION;
+                txtExpedienteNro.Text = Resolucion.FANROEXPED;
+
+                // txtExpedienteNroReso.Text = Resolucion.FANROEXPED;
+                cmbExpedienteCalifica.Text = (from C in BD.CALIFICACION where C.FACODCALIFI == Resolucion.FAREQCALIFICA select C.FADESCALIFI).First().ToString();
+                dtpExpedienteFechaNotificacion.Value = Resolucion.FDFECNOTIF.Value;
+                dtpExpedienteFechaVencimiento.Value = Resolucion.FDFECVENCI.Value;
+                txtExpObservacion.Text = Resolucion.FAOBSERVACION;
+
+                // MessageBox.Show(BD.PA_COAC_COSTASPROCESALES(txtExpedienteIdCiudadano.Text).First().Saldo.ToString());
+                // PintarGrid_EstadoCuentaIP(txtExpedienteIdCiudadano.Text);
+
+                if (Convert.ToInt32(BD.PA_COAC_COSTASPROCESALES(txtExpedienteIdCiudadano.Text).First().Saldo.Value) == decimal.Parse("0"))//se corrigio el sp
+                {
+                    MessageBox.Show("PENDIENTE DE GENERAR LAS ORDENES DE PAGO DE LAS COSTAS PROCESALES.");
+                }
+                else
+                {
+                    string valorcajacostas = decimal.Parse((from C in BD.PA_COAC_COSTASPROCESALES(txtExpedienteIdCiudadano.Text) select C.Saldo).First().ToString()).ToString("N2");
+                    //string valorcajacostas = "";
+                    if (valorcajacostas != Resolucion.FNCOSPROCE.ToString())
+                    {
+                        MessageBox.Show("DEBE ACTUALIZAR LAS COSTAS PROCESALES ANTES DE CONTINUAR.  Valor correcto: " + valorcajacostas);
+                        //txtExpedienteCostasProc.Text = Resolucion.FNCOSPROCE.ToString();
+                        txtExpedienteCostasProc.Text = valorcajacostas;
+                    }
+                    else
+                    {
+                        txtExpedienteCostasProc.Text = Resolucion.FNCOSPROCE.ToString();
+                    }
+
+
+                    cmbExpedienteAuxiliar.SelectedValue = Resolucion.FNCODAUXILIAR;
+                    cmbExpedienteNotificador.SelectedValue = Resolucion.FNCODNOTIFICADOR;
+                    txtFechaResolucion.Text = Resolucion.FDFECIMPRE;
+                    txtAnioValor.Text = Resolucion.FAANIORESOLUCION;//////////////////
+                    dgvExpedientesCoac.ClearSelection();
+
+                }
+                PintarGrid_EstadoCuentaIP(txtExpedienteIdCiudadano.Text);
+                llenarDetallesEstadoActual();
+            }
         }
     } 
 }

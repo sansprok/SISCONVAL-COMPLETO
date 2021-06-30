@@ -1062,10 +1062,10 @@ namespace SISCONVAL
         {
             /*frmReporteResolucion resolucionmasiv = new frmReporteResolucion(2019, 2560, 2570);
             resolucionmasiv.ShowDialog();*/
-            /*frmResporteResolucionMasiva resomasiv = new frmResporteResolucionMasiva(2019, 2560,2570);
+          /*  frmResporteResolucionMasiva resomasiv = new frmResporteResolucionMasiva(2019, 2560,2570);
             resomasiv.ShowDialog();*/
-           /* frmReporteRD_Masiv report = new frmReporteRD_Masiv(2019,1,1714);
-            report.ShowDialog();*/
+            frmReporteRD_Masiv report = new frmReporteRD_Masiv(2021, 1061, 1061);
+            report.ShowDialog();
         }
 
         private void txtAnioResolucion_TextChanged(object sender, EventArgs e)

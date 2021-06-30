@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCoactivaControl));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.PA_COAC_RESUMENRESOLUCIONESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DS_VALORES = new SISCONVAL.DS_VALORES();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -131,6 +131,11 @@
             this.btnCargarReporte = new System.Windows.Forms.Button();
             this.cmbResporteCoacEstado = new System.Windows.Forms.ComboBox();
             this.PA_COAC_RESUMENRESOLUCIONESTableAdapter = new SISCONVAL.DS_VALORESTableAdapters.PA_COAC_RESUMENRESOLUCIONESTableAdapter();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.dgvDetallesRD = new System.Windows.Forms.DataGridView();
+            this.dgvSituacionActual = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.PA_COAC_RESUMENRESOLUCIONESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_VALORES)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -150,6 +155,10 @@
             this.tabPage3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesRD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSituacionActual)).BeginInit();
             this.SuspendLayout();
             // 
             // PA_COAC_RESUMENRESOLUCIONESBindingSource
@@ -169,10 +178,10 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(955, 562);
+            this.tabControl1.Size = new System.Drawing.Size(955, 686);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -181,35 +190,40 @@
             this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage1.Size = new System.Drawing.Size(947, 536);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(947, 660);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "GENERAL";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel9);
+            this.panel2.Controls.Add(this.groupBox4);
+            this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.dgvExpedientesCoac);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(2, 178);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(943, 232);
+            this.panel2.Size = new System.Drawing.Size(943, 356);
             this.panel2.TabIndex = 1;
             // 
             // dgvExpedientesCoac
             // 
             this.dgvExpedientesCoac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExpedientesCoac.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvExpedientesCoac.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvExpedientesCoac.Location = new System.Drawing.Point(0, 0);
-            this.dgvExpedientesCoac.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvExpedientesCoac.Margin = new System.Windows.Forms.Padding(2);
             this.dgvExpedientesCoac.Name = "dgvExpedientesCoac";
+            this.dgvExpedientesCoac.ReadOnly = true;
             this.dgvExpedientesCoac.RowTemplate.Height = 24;
             this.dgvExpedientesCoac.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvExpedientesCoac.Size = new System.Drawing.Size(943, 232);
+            this.dgvExpedientesCoac.Size = new System.Drawing.Size(943, 97);
             this.dgvExpedientesCoac.TabIndex = 0;
+            this.dgvExpedientesCoac.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpedientesCoac_CellClick);
             this.dgvExpedientesCoac.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DgvExpedientesCoac_RowPrePaint);
             this.dgvExpedientesCoac.DoubleClick += new System.EventHandler(this.dgvExpedientesCoac_DoubleClick);
             // 
@@ -237,8 +251,8 @@
             this.panel3.Controls.Add(this.btnExpLimpiar);
             this.panel3.Controls.Add(this.btnExpImprimirRD);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(2, 410);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(2, 534);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(943, 124);
             this.panel3.TabIndex = 1;
@@ -259,7 +273,7 @@
             this.textBox8.BackColor = System.Drawing.Color.Red;
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox8.Location = new System.Drawing.Point(490, 102);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(75, 13);
             this.textBox8.TabIndex = 42;
@@ -280,7 +294,7 @@
             this.textBox6.BackColor = System.Drawing.Color.Orange;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Location = new System.Drawing.Point(490, 63);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(75, 13);
             this.textBox6.TabIndex = 40;
@@ -301,7 +315,7 @@
             this.textBox1.BackColor = System.Drawing.Color.Green;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Location = new System.Drawing.Point(490, 23);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(75, 13);
             this.textBox1.TabIndex = 38;
@@ -490,7 +504,7 @@
             this.panel1.Controls.Add(this.groupBox6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(943, 176);
             this.panel1.TabIndex = 0;
@@ -562,7 +576,7 @@
             // txtFechaResolucion
             // 
             this.txtFechaResolucion.Location = new System.Drawing.Point(408, 113);
-            this.txtFechaResolucion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFechaResolucion.Margin = new System.Windows.Forms.Padding(2);
             this.txtFechaResolucion.Name = "txtFechaResolucion";
             this.txtFechaResolucion.Size = new System.Drawing.Size(116, 20);
             this.txtFechaResolucion.TabIndex = 38;
@@ -580,7 +594,7 @@
             // txtExpedienteCostasProc
             // 
             this.txtExpedienteCostasProc.Location = new System.Drawing.Point(394, 84);
-            this.txtExpedienteCostasProc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtExpedienteCostasProc.Margin = new System.Windows.Forms.Padding(2);
             this.txtExpedienteCostasProc.Name = "txtExpedienteCostasProc";
             this.txtExpedienteCostasProc.Size = new System.Drawing.Size(102, 20);
             this.txtExpedienteCostasProc.TabIndex = 36;
@@ -795,7 +809,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(224, 128);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(127, 28);
             this.btnBuscar.TabIndex = 18;
@@ -944,9 +958,9 @@
             this.tabPage2.Controls.Add(this.panel5);
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(947, 536);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "EMISION RESOLUCIONES";
@@ -957,7 +971,7 @@
             this.panel6.Controls.Add(this.dataGridView1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(2, 204);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(943, 213);
             this.panel6.TabIndex = 4;
@@ -967,7 +981,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(943, 213);
@@ -977,7 +991,7 @@
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(2, 417);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(943, 117);
             this.panel5.TabIndex = 3;
@@ -988,7 +1002,7 @@
             this.panel4.Controls.Add(this.groupBox1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(2, 2);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(943, 202);
             this.panel4.TabIndex = 2;
@@ -1000,9 +1014,9 @@
             this.groupBox2.Controls.Add(this.textBox9);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Location = new System.Drawing.Point(375, 2);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(367, 156);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
@@ -1055,9 +1069,9 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(4, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(367, 156);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -1140,9 +1154,9 @@
             this.tabPage3.Controls.Add(this.panel8);
             this.tabPage3.Controls.Add(this.panel7);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage3.Size = new System.Drawing.Size(947, 536);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "RESUMEN RESOLUCIONES";
@@ -1153,7 +1167,7 @@
             this.panel8.Controls.Add(this.rpvCoacResoluciones);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(2, 94);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(943, 440);
             this.panel8.TabIndex = 1;
@@ -1161,12 +1175,12 @@
             // rpvCoacResoluciones
             // 
             this.rpvCoacResoluciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "DataSet_Resumen_ValoresCoac";
-            reportDataSource2.Value = this.PA_COAC_RESUMENRESOLUCIONESBindingSource;
-            this.rpvCoacResoluciones.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource4.Name = "DataSet_Resumen_ValoresCoac";
+            reportDataSource4.Value = this.PA_COAC_RESUMENRESOLUCIONESBindingSource;
+            this.rpvCoacResoluciones.LocalReport.DataSources.Add(reportDataSource4);
             this.rpvCoacResoluciones.LocalReport.ReportEmbeddedResource = "SISCONVAL.Reportes.ReportResumenRDCoactiva.rdlc";
             this.rpvCoacResoluciones.Location = new System.Drawing.Point(0, 0);
-            this.rpvCoacResoluciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rpvCoacResoluciones.Margin = new System.Windows.Forms.Padding(2);
             this.rpvCoacResoluciones.Name = "rpvCoacResoluciones";
             this.rpvCoacResoluciones.ServerReport.BearerToken = null;
             this.rpvCoacResoluciones.Size = new System.Drawing.Size(943, 440);
@@ -1181,7 +1195,7 @@
             this.panel7.Controls.Add(this.cmbResporteCoacEstado);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(2, 2);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(943, 92);
             this.panel7.TabIndex = 0;
@@ -1189,7 +1203,7 @@
             // txtReporteCoacAnioExpediente
             // 
             this.txtReporteCoacAnioExpediente.Location = new System.Drawing.Point(57, 29);
-            this.txtReporteCoacAnioExpediente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtReporteCoacAnioExpediente.Margin = new System.Windows.Forms.Padding(2);
             this.txtReporteCoacAnioExpediente.Name = "txtReporteCoacAnioExpediente";
             this.txtReporteCoacAnioExpediente.Size = new System.Drawing.Size(125, 20);
             this.txtReporteCoacAnioExpediente.TabIndex = 4;
@@ -1217,7 +1231,7 @@
             // btnCargarReporte
             // 
             this.btnCargarReporte.Location = new System.Drawing.Point(713, 24);
-            this.btnCargarReporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCargarReporte.Margin = new System.Windows.Forms.Padding(2);
             this.btnCargarReporte.Name = "btnCargarReporte";
             this.btnCargarReporte.Size = new System.Drawing.Size(122, 51);
             this.btnCargarReporte.TabIndex = 1;
@@ -1229,7 +1243,7 @@
             // 
             this.cmbResporteCoacEstado.FormattingEnabled = true;
             this.cmbResporteCoacEstado.Location = new System.Drawing.Point(71, 55);
-            this.cmbResporteCoacEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbResporteCoacEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cmbResporteCoacEstado.Name = "cmbResporteCoacEstado";
             this.cmbResporteCoacEstado.Size = new System.Drawing.Size(183, 21);
             this.cmbResporteCoacEstado.TabIndex = 0;
@@ -1238,14 +1252,64 @@
             // 
             this.PA_COAC_RESUMENRESOLUCIONESTableAdapter.ClearBeforeFill = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.dgvDetallesRD);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox3.ForeColor = System.Drawing.Color.Black;
+            this.groupBox3.Location = new System.Drawing.Point(0, 97);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(430, 259);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "DETALLES GENERACION";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dgvSituacionActual);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox4.Location = new System.Drawing.Point(477, 97);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(466, 259);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "SITUCION ACTUAL";
+            // 
+            // panel9
+            // 
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(430, 97);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(47, 259);
+            this.panel9.TabIndex = 3;
+            // 
+            // dgvDetallesRD
+            // 
+            this.dgvDetallesRD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetallesRD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDetallesRD.Location = new System.Drawing.Point(3, 16);
+            this.dgvDetallesRD.Name = "dgvDetallesRD";
+            this.dgvDetallesRD.Size = new System.Drawing.Size(424, 240);
+            this.dgvDetallesRD.TabIndex = 0;
+            // 
+            // dgvSituacionActual
+            // 
+            this.dgvSituacionActual.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSituacionActual.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSituacionActual.Location = new System.Drawing.Point(3, 16);
+            this.dgvSituacionActual.Name = "dgvSituacionActual";
+            this.dgvSituacionActual.Size = new System.Drawing.Size(460, 240);
+            this.dgvSituacionActual.TabIndex = 0;
+            // 
             // frmCoactivaControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 562);
+            this.ClientSize = new System.Drawing.Size(955, 686);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCoactivaControl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CONTROL DE REQUERIMIENTOS DE COBRANZA COACTIVA";
@@ -1276,6 +1340,10 @@
             this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesRD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSituacionActual)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1382,5 +1450,10 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dgvSituacionActual;
+        private System.Windows.Forms.DataGridView dgvDetallesRD;
     }
 }
